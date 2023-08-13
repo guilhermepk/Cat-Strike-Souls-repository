@@ -15,6 +15,8 @@ var inBox = false
 func _process(delta): #Faz com que tudo rode a 60 fps
 	var currentScene = get_tree().current_scene.filename
 	
+	
+	
 	if currentScene in movimentScenes:
 		$Camera2D.current = true
 			
