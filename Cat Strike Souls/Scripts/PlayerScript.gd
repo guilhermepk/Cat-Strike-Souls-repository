@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var motion = Vector2.ZERO
 var spd = 100
-var limit_spd = 300
+var limit_spd = 200
 var desac = 25
 
 var movimentScenes = [
@@ -57,6 +57,7 @@ func _process(delta): #Faz com que tudo rode a 60 fps
 			motion.x = 0
 			motion.y = 0
 			
+			#KeyCode 69 = "e"
 			if Input.is_key_pressed(69):
 				position.x += 20
 				position.y += 25
