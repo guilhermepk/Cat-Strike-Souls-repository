@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var motion = Vector2.ZERO
-var spd = 100
-var limit_spd = 200
+var spd = 50
+var limit_spd = 250
 var desac = 25
 
 var movimentScenes = [
@@ -12,7 +12,7 @@ var movimentScenes = [
 var inBox = false
 	
 
-func _process(delta): #Faz com que tudo rode a 60 fps
+func _process(delta):
 	var currentScene = get_tree().current_scene.filename
 	
 	

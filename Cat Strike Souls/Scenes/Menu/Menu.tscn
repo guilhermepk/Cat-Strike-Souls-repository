@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/mago1.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/TileMaps/TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Entities/Personagens/Player.tscn" type="PackedScene" id=4]
