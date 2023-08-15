@@ -21,10 +21,12 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
-margin_left = 433.0
-margin_top = 93.0
-margin_right = 473.0
-margin_bottom = 133.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -87.0
+margin_top = 70.0
+margin_right = 65.0
+margin_bottom = 136.0
 alignment = 1
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
@@ -43,8 +45,10 @@ text = "Setas - Andar"
 align = 1
 
 [node name="BackButton" parent="." instance=ExtResource( 2 )]
-margin_left = 941.0
-margin_top = 14.0
-margin_right = 1008.0
-margin_bottom = 44.0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -107.0
+margin_top = 40.0
+margin_right = -40.0
+margin_bottom = 70.0
 scene_path = "res://Scenes/Menu/Menu.tscn"

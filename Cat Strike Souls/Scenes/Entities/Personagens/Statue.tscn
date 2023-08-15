@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Sprites/estátua.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/TileMaps/TileMap.tscn" type="PackedScene" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -28,6 +29,10 @@ radius = 8.5
 
 [node name="Estátua" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+cell_size = Vector2( 32, 32 )
+tile_data = PoolIntArray( 65535, 144, 0, 0, 146, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -12 )
