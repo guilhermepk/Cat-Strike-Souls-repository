@@ -10,7 +10,6 @@ var movimentScenes = [
 ]
 
 var inBox = false
-	
 
 func _process(delta):
 	var currentScene = get_tree().current_scene.filename

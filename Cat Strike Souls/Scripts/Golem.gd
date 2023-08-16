@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 var motion = Vector2.ZERO
-var spd = 100
+var spd = 50
 var limit_spd = 100
-var desac = 25
+var desac = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,3 +24,8 @@ func _process(delta):
 	
 	
 	move_and_slide(motion)
+
+
+func _on_GolemArea2D_body_entered(body):
+	if body.name == 'Player':
+		print('Player encostou no Boss')

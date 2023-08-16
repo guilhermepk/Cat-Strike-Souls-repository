@@ -49,11 +49,11 @@ tile_data = PoolIntArray( 65530, 81, 0, 21, 85, 0, 131066, 81, 0, 65557, 73, 0, 
 position = Vector2( 1, 524 )
 
 [node name="Golem" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -7, 1284 )
+position = Vector2( -5, 347 )
 scale = Vector2( 5, 5 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 7, 1460 )
+position = Vector2( 214, 526 )
 
 [node name="Caixa" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 600, 1352 )
