@@ -47,7 +47,7 @@ func _process(delta):
 			motion.x -= spd
 			motion.y -= spd
 	
-	move_and_slide(motion)
+	#move_and_slide(motion)
 
 
 func _on_GolemArea2D_body_entered(body):
@@ -63,3 +63,8 @@ func _on_GolemArea2D_body_entered(body):
 func _on_Influence_body_entered(body):
 	if body.name == 'Player':
 		$AnimatedSprite.play("attack")
+
+
+func _on_Influence_body_exited(body):
+	if body.name == 'Player':
+		$AnimatedSprite.play('idle')
