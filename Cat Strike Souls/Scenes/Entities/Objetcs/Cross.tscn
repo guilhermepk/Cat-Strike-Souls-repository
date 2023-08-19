@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/TileMaps/ObjectsTiles.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9, 6 )
+
+[node name="Cross" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+position = Vector2( -16, 20 )
+cell_size = Vector2( 32, 64 )
+tile_data = PoolIntArray( -65536, 20, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
+shape = SubResource( 1 )

@@ -231,24 +231,23 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=49]
-radius = 2.66667
-height = 6.66667
+[sub_resource type="RectangleShape2D" id=87]
+extents = Vector2( 5, 2 )
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 3, 3 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -2 )
 frames = SubResource( 42 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4.33333 )
-rotation = 1.5708
-shape = SubResource( 49 )
+position = Vector2( -1.58946e-07, 3 )
+shape = SubResource( 87 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -5000

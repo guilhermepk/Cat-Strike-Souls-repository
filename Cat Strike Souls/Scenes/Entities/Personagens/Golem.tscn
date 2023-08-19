@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Assets/Sprites/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Golem.gd" type="Script" id=2]
@@ -315,15 +315,18 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=47]
-radius = 6.99999
-height = 2.0
+radius = 6.0
+height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=46]
-radius = 7.99999
-height = 2.0
+radius = 7.0
+height = 2.00272e-05
 
 [sub_resource type="CircleShape2D" id=72]
-radius = 59.0
+radius = 109.092
+
+[sub_resource type="CircleShape2D" id=73]
+radius = 48.1664
 
 [node name="Golem" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -331,30 +334,51 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, -18 )
 frames = SubResource( 5 )
-animation = "idle"
-frame = 2
+animation = "attack"
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -7 )
+visible = false
+position = Vector2( 0, -5 )
 rotation = 1.5708
 shape = SubResource( 47 )
 
 [node name="GolemArea2D" type="Area2D" parent="."]
-position = Vector2( 0, -10 )
+visible = false
+position = Vector2( 0, -5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GolemArea2D"]
-position = Vector2( 0, 3 )
 rotation = 1.5708
 shape = SubResource( 46 )
 
 [node name="Influence" type="Area2D" parent="."]
+visible = false
 position = Vector2( 0, -10 )
+scale = Vector2( 0.980864, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Influence"]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 4 )
 shape = SubResource( 72 )
+
+[node name="InfluenceNearby" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfluenceNearby"]
+position = Vector2( 0, -6 )
+shape = SubResource( 73 )
+
+[node name="Arm" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arm"]
+position = Vector2( -2, 0 )
+scale = Vector2( 1.00164, 1 )
+polygon = PoolVector2Array( 33, 2, 37, 5, 37, 2, 39, 2, 39, 0, 38, -3, 37, -5, 34, -5, 31, -4, 29, -3, 29, 0, 32, 4 )
 
 [connection signal="body_entered" from="GolemArea2D" to="." method="_on_GolemArea2D_body_entered"]
 [connection signal="body_entered" from="Influence" to="." method="_on_Influence_body_entered"]
 [connection signal="body_exited" from="Influence" to="." method="_on_Influence_body_exited"]
+[connection signal="body_entered" from="InfluenceNearby" to="." method="_on_InfluenceNearby_body_entered"]
+[connection signal="body_exited" from="InfluenceNearby" to="." method="_on_InfluenceNearby_body_exited"]
+[connection signal="body_entered" from="Arm" to="." method="_on_Arm_body_entered"]
+[connection signal="body_exited" from="Arm" to="." method="_on_Arm_body_exited"]
