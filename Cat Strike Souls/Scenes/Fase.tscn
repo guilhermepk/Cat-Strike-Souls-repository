@@ -53,7 +53,7 @@ position = Vector2( -1, 698 )
 scale = Vector2( 5, 5 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 31, 1295 )
+position = Vector2( 2, 1332 )
 
 [node name="Caixa" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 600, 1352 )

@@ -35,15 +35,16 @@ func _process(delta):
 		motion.x = 0
 		motion.y = 0
 		
-	if playerInArm and $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 6:
+	if playerInArm and $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 7:
 		print('Jogador atacado')
 		player.alive = false
-		$AnimatedSprite.play("idle")
 	
 	if playerNearby and player.alive:
 		$AnimatedSprite.play("attack")
+	else:
+		$AnimatedSprite.play("idle")
 	
-	move_and_slide(motion)
+	#move_and_slide(motion)
 
 func followPlayer(player):
 	var playerX = player.position.x
