@@ -326,26 +326,24 @@ height = 2.00272e-05
 radius = 109.092
 
 [sub_resource type="CircleShape2D" id=73]
-radius = 48.1664
+radius = 50.04
 
 [node name="Golem" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1, -18 )
+position = Vector2( 0, -18 )
 frames = SubResource( 5 )
-animation = "attack"
-frame = 5
+animation = "aim"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, -5 )
 rotation = 1.5708
 shape = SubResource( 47 )
 
 [node name="GolemArea2D" type="Area2D" parent="."]
-visible = false
 position = Vector2( 0, -5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GolemArea2D"]
@@ -369,10 +367,10 @@ position = Vector2( 0, -6 )
 shape = SubResource( 73 )
 
 [node name="Arm" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arm"]
-position = Vector2( -2, 0 )
-scale = Vector2( 1.00164, 1 )
+position = Vector2( -3, 0 )
 polygon = PoolVector2Array( 33, 2, 37, 5, 37, 2, 39, 2, 39, 0, 38, -3, 37, -5, 34, -5, 31, -4, 29, -3, 29, 0, 32, 4 )
 
 [connection signal="body_entered" from="GolemArea2D" to="." method="_on_GolemArea2D_body_entered"]

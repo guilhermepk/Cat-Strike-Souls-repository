@@ -12,6 +12,8 @@ var player
 
 var playerInArm
 
+var playerNearby
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
@@ -36,8 +38,12 @@ func _process(delta):
 	if playerInArm and $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 6:
 		print('Jogador atacado')
 		player.alive = false
+		$AnimatedSprite.play("idle")
 	
-	#move_and_slide(motion)
+	if playerNearby and player.alive:
+		$AnimatedSprite.play("attack")
+	
+	move_and_slide(motion)
 
 func followPlayer(player):
 	var playerX = player.position.x
@@ -48,9 +54,13 @@ func followPlayer(player):
 	if playerX > x+5:
 		motion.x += spd
 		$AnimatedSprite.flip_h = false
+		$Arm/CollisionPolygon2D.scale.x = 1
+		$Arm/CollisionPolygon2D.position.x = -3
 	elif playerX < x-5:
 		motion.x -= spd
 		$AnimatedSprite.flip_h = true
+		$Arm/CollisionPolygon2D.scale.x = -1
+		$Arm/CollisionPolygon2D.position.x = 3
 	else:
 		motion.x = 0
 	if playerY > y+5:
@@ -80,12 +90,13 @@ func _on_Influence_body_exited(body):
 func _on_InfluenceNearby_body_entered(body):
 	if body.name == 'Player':
 		print('Player entrou na área próxima')
-		$AnimatedSprite.play("attack")
+		playerNearby = true
 
 
 func _on_InfluenceNearby_body_exited(body):
 	if body.name == 'Player':
 		print('Player saiu da área próxima')
+		playerNearby = false
 		$AnimatedSprite.play('idle')
 
 
