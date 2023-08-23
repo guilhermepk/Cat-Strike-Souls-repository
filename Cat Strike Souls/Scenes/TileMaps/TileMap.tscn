@@ -2911,5 +2911,6 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 32, 0, 32 )
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource( 68 )
+cell_size = Vector2( 32, 32 )
 show_collision = true
 format = 1
