@@ -10,10 +10,16 @@
 [ext_resource path="res://Scenes/Entities/Objetcs/Altar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Entities/Objetcs/Rock 6.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Entities/Objetcs/Door.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/png vazio.png" type="Texture" id=11]
+[ext_resource path="res://light.jpg" type="Texture" id=11]
 [ext_resource path="res://Scenes/Entities/Objetcs/Bench.tscn" type="PackedScene" id=12]
 
 [node name="Fase" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 624, 79 )
+texture = ExtResource( 11 )
+color = Color( 0.737255, 0.658824, 0.145098, 1 )
+energy = 0.75
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -143,13 +149,6 @@ scale = Vector2( 2, 2 )
 tile_data = PoolIntArray( -12, 75, 0, -11, 83, 0, -10, 83, 0, -9, 83, 0, -8, 83, 0, -7, 83, 0, -6, 83, 0, -5, 83, 0, -4, 83, 0, -3, 83, 0, -2, 83, 0, -1, 83, 0, -65534, 116, 0, 65524, 78, 0, 65525, 88, 0, 65526, 88, 0, 65527, 88, 0, 65528, 88, 0, 65529, 88, 0, 65530, 88, 0, 65531, 88, 0, 65532, 88, 0, 65533, 88, 0, 65534, 88, 0, 65535, 88, 0, 2, 120, 0 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2( -304, 397 )
 scale = Vector2( 2, 2 )
 color = Color( 0.32549, 0.509804, 0.72549, 1 )
-
-[node name="Light2D" type="Light2D" parent="CanvasModulate"]
-position = Vector2( 154, 132 )
-texture = ExtResource( 11 )
-color = Color( 0.980392, 0.776471, 0.776471, 1 )
-energy = 3.09
