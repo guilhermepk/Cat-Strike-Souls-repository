@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/png vazio.png-8609815ca9711f674ac66000d2c4d328.stex"
+path="res://.import/C300-2.png-0ee137b56b524b467ccf9e3bab2c1b05.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/png vazio.png"
-dest_files=[ "res://.import/png vazio.png-8609815ca9711f674ac66000d2c4d328.stex" ]
+source_file="res://Assets/Sprites/candle/C300-2.png"
+dest_files=[ "res://.import/C300-2.png-0ee137b56b524b467ccf9e3bab2c1b05.stex" ]
 
 [params]
 

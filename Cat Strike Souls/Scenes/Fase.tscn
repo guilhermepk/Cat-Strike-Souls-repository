@@ -10,16 +10,12 @@
 [ext_resource path="res://Scenes/Entities/Objetcs/Altar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Entities/Objetcs/Rock 6.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Entities/Objetcs/Door.tscn" type="PackedScene" id=10]
-[ext_resource path="res://light.jpg" type="Texture" id=11]
 [ext_resource path="res://Scenes/Entities/Objetcs/Bench.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Entities/Objetcs/Candle.tscn" type="PackedScene" id=13]
 
 [node name="Fase" type="Node2D"]
 
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 624, 79 )
-texture = ExtResource( 11 )
-color = Color( 0.737255, 0.658824, 0.145098, 1 )
-energy = 0.75
+[node name="Lights" type="Node2D" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -56,11 +52,12 @@ tile_data = PoolIntArray( 65530, 81, 0, 21, 85, 0, 131066, 81, 0, 65557, 73, 0, 
 position = Vector2( 4, 514 )
 
 [node name="Golem" parent="Node2D/YSort" instance=ExtResource( 6 )]
-position = Vector2( 33.0001, 794 )
+position = Vector2( 8.00003, 791 )
 scale = Vector2( 5, 5 )
 
 [node name="Player" parent="Node2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 2, 1332 )
+position = Vector2( 335, 542 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="Caixa" parent="Node2D/YSort" instance=ExtResource( 5 )]
 position = Vector2( 600, 1352 )
@@ -86,9 +83,17 @@ scale = Vector2( 3, 3 )
 position = Vector2( -615.999, 1400 )
 scale = Vector2( 3, 3 )
 
+[node name="Candle" parent="Node2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( -644, 1094 )
+scale = Vector2( 3, 3 )
+
 [node name="LittleColumn" parent="Node2D/YSort" instance=ExtResource( 3 )]
 position = Vector2( 149, 267 )
 scale = Vector2( 2, 2 )
+
+[node name="Candle2" parent="Node2D/YSort/LittleColumn" instance=ExtResource( 13 )]
+position = Vector2( 0, -36 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="LittleColumn2" parent="Node2D/YSort" instance=ExtResource( 3 )]
 position = Vector2( -148, 264 )
@@ -107,7 +112,7 @@ position = Vector2( 289, 403 )
 scale = Vector2( 2, 2 )
 
 [node name="LittleColumn6" parent="Node2D/YSort" instance=ExtResource( 3 )]
-position = Vector2( 299, 678 )
+position = Vector2( 287, 669 )
 scale = Vector2( 2, 2 )
 
 [node name="LittleColumn7" parent="Node2D/YSort" instance=ExtResource( 3 )]
@@ -148,7 +153,9 @@ position = Vector2( -80, 1536 )
 scale = Vector2( 2, 2 )
 tile_data = PoolIntArray( -12, 75, 0, -11, 83, 0, -10, 83, 0, -9, 83, 0, -8, 83, 0, -7, 83, 0, -6, 83, 0, -5, 83, 0, -4, 83, 0, -3, 83, 0, -2, 83, 0, -1, 83, 0, -65534, 116, 0, 65524, 78, 0, 65525, 88, 0, 65526, 88, 0, 65527, 88, 0, 65528, 88, 0, 65529, 88, 0, 65530, 88, 0, 65531, 88, 0, 65532, 88, 0, 65533, 88, 0, 65534, 88, 0, 65535, 88, 0, 2, 120, 0 )
 
+[node name="Columns" type="Node2D" parent="Node2D/YSort"]
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -304, 397 )
 scale = Vector2( 2, 2 )
-color = Color( 0.32549, 0.509804, 0.72549, 1 )
+color = Color( 0.509804, 0.647059, 0.807843, 1 )
