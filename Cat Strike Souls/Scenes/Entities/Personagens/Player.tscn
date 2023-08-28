@@ -235,9 +235,9 @@ animations = [ {
 extents = Vector2( 5, 2 )
 
 [sub_resource type="Animation" id=114]
-length = 0.001
+length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("FadeAnimation/ColorRect:color")
+tracks/0/path = NodePath("../FadeAnimation/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -249,7 +249,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("FadeAnimation/ColorRect:visible")
+tracks/1/path = NodePath("../FadeAnimation/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -258,14 +258,14 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=115]
 resource_name = "fade"
-length = 4.0
+length = 3.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("FadeAnimation/ColorRect:color")
+tracks/0/path = NodePath("../FadeAnimation/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -277,13 +277,13 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("FadeAnimation/ColorRect:visible")
+tracks/1/path = NodePath("../FadeAnimation/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 4 ),
+"times": PoolRealArray( 0, 3.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -298,7 +298,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, -3 )
 frames = SubResource( 42 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -310,7 +310,6 @@ anims/RESET = SubResource( 114 )
 anims/fade = SubResource( 115 )
 
 [node name="ColorRect" type="ColorRect" parent="FadeAnimation"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
