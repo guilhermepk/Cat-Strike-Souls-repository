@@ -12,6 +12,9 @@ var movimentScenes = [
 var inBox = false
 var alive = true
 
+func _ready():
+	$FadeAnimation.play('fade')
+
 func _process(delta):
 	var currentScene = get_tree().current_scene.filename
 	
@@ -71,7 +74,7 @@ func _process(delta):
 			motion.x = 0
 			motion.y = 0
 			$AnimatedSprite.play('die')
-			$FadeAnimation.play('fade')
+			
 			
 			if $AnimatedSprite.frame == 6:
 				$AnimatedSprite.playing = false
