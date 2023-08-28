@@ -33,12 +33,12 @@ radius = 0.5
 height = 5.0
 
 [node name="Candle" type="StaticBody2D"]
+position = Vector2( 0, -1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2.11758e-22, -5 )
 scale = Vector2( 0.025, 0.025 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="AnimatedSprite"]
@@ -46,7 +46,7 @@ position = Vector2( -1.90735e-06, -80 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 4 )
 color = Color( 0.960784, 0.501961, 0.25098, 1 )
-energy = 1.25
+energy = 1.15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.5 )

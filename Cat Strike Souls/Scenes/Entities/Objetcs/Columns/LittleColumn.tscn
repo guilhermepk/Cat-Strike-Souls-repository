@@ -60,7 +60,6 @@ cell_size = Vector2( 32, 64 )
 tile_data = PoolIntArray( -65536, 37, 0 )
 
 [node name="LightEffects" type="Node2D" parent="TileMap"]
-visible = false
 position = Vector2( 17, -22 )
 
 [node name="R" type="AnimatedSprite" parent="TileMap/LightEffects"]

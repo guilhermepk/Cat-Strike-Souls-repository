@@ -137,18 +137,11 @@ flat = true
 [node name="QuitButton" parent="Options/MainContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
 position = Vector2( 59, 96 )
 
-[node name="ColorRect" type="ColorRect" parent="Options"]
-margin_left = 541.0
-margin_top = 678.0
-margin_right = 734.0
-margin_bottom = 705.0
-color = Color( 0, 0, 0, 0.294118 )
-
-[node name="ColorRect2" type="ColorRect" parent="Options/ColorRect"]
-margin_left = 82.0
-margin_top = 3.0
-margin_right = 188.0
-margin_bottom = 22.0
+[node name="ColorRect2" type="ColorRect" parent="Options"]
+margin_left = 623.0
+margin_top = 681.0
+margin_right = 729.0
+margin_bottom = 700.0
 color = Color( 1, 1, 1, 0.0980392 )
 
 [node name="AuthorContainer" type="HBoxContainer" parent="Options"]
@@ -172,7 +165,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Feito por"
 
 [node name="Developer" type="Button" parent="Options/AuthorContainer" groups=["button"]]
-modulate = Color( 0, 1, 1, 1 )
+modulate = Color( 1, 0, 0, 1 )
 margin_left = 125.0
 margin_right = 235.0
 margin_bottom = 41.0

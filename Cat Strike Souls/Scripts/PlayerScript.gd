@@ -16,7 +16,6 @@ func _process(delta):
 	var currentScene = get_tree().current_scene.filename
 	
 	if currentScene in movimentScenes:
-		$Camera2D.current = true
 			
 		if motion.x > limit_spd:
 			motion.x = limit_spd
@@ -28,7 +27,11 @@ func _process(delta):
 		elif motion.y < -limit_spd:
 			motion.y = -limit_spd
 			
-		if alive:	
+		if alive:
+			if motion.x != 0 or motion.y != 0:
+				$AnimatedSprite.play("run")
+			else:
+				$AnimatedSprite.play("idle")	
 			if !inBox:
 				##Movimentação
 				if Input.is_action_pressed("ui_right"):
@@ -64,21 +67,13 @@ func _process(delta):
 					position.x += 40
 				elif Input.is_action_just_pressed('ui_left'):
 					position.x -= 40
-		
-	else:
-		$Camera2D.current = false
-	
-	##Animação de correr
-	if alive:
-		if motion.x != 0 or motion.y != 0:
-			$AnimatedSprite.play("run")
 		else:
-			$AnimatedSprite.play("idle")
-	else:
-		motion.x = 0
-		motion.y = 0
-		$AnimatedSprite.play('die')
-		if $AnimatedSprite.frame == 6:
-			$AnimatedSprite.playing = false
-	
+			motion.x = 0
+			motion.y = 0
+			$AnimatedSprite.play('die')
+			$FadeAnimation.play('fade')
+			
+			if $AnimatedSprite.frame == 6:
+				$AnimatedSprite.playing = false
+				
 	move_and_slide(motion)
