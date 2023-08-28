@@ -243,9 +243,18 @@ script = ExtResource( 2 )
 position = Vector2( 0, -3 )
 frames = SubResource( 42 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
 shape = SubResource( 87 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1.23978e-05, 0 )
+scale = Vector2( 0.4, 0.4 )
+limit_left = -5000
+limit_top = -5000
+limit_right = 5000
+limit_bottom = 5000
+limit_smoothed = true

@@ -16,7 +16,7 @@ func _process(delta):
 	var currentScene = get_tree().current_scene.filename
 	
 	if currentScene in movimentScenes:
-			
+		$Camera2D.current = true
 		if motion.x > limit_spd:
 			motion.x = limit_spd
 		elif motion.x < -limit_spd:
@@ -71,9 +71,11 @@ func _process(delta):
 			motion.x = 0
 			motion.y = 0
 			$AnimatedSprite.play('die')
-			
+			get_tree().change_scene("res://Scenes/Fase.tscn")
 			
 			if $AnimatedSprite.frame == 6:
 				$AnimatedSprite.playing = false
-				
+	else:
+		$Camera2D.current = false
+		
 	move_and_slide(motion)
