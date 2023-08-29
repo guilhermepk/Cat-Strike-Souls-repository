@@ -38,7 +38,6 @@ tile_data = PoolIntArray( 0, 39, 0 )
 [node name="LightEffects" type="Node2D" parent="TileMap"]
 
 [node name="4!" type="AnimatedSprite" parent="TileMap/LightEffects"]
-visible = false
 position = Vector2( 17, 46 )
 frames = SubResource( 2 )
 
@@ -50,7 +49,6 @@ color = Color( 0.32549, 0.807843, 0.905882, 1 )
 energy = 0.6
 
 [node name="<>" type="AnimatedSprite" parent="TileMap/LightEffects"]
-visible = false
 position = Vector2( 17, 54 )
 frames = SubResource( 4 )
 

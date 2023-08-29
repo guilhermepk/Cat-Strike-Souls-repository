@@ -5,12 +5,21 @@ var spd = 50
 var limit_spd = 300
 var desac = 25
 
+var timer = Timer.new()
+
 var movimentScenes = [
 	"res://Scenes/Fase.tscn"
 ]
 
 var inBox = false
 var alive = true
+
+func executeTimer(time, function):
+	timer.connect("timeout", self, function)
+	timer.wait_time = time
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
 
 func _process(delta):
 	var currentScene = get_tree().current_scene.filename
@@ -71,6 +80,11 @@ func _process(delta):
 			motion.x = 0
 			motion.y = 0
 			$AnimatedSprite.play('die')
+			$Camera2D/AnimationPlayer/ColorRect.rect_position = position
+			$Camera2D/AnimationPlayer/ColorRect.visible = true
+			$Camera2D/AnimationPlayer.play("fade")
+			Timer
+			
 			get_tree().change_scene("res://Scenes/Fase.tscn")
 			
 			if $AnimatedSprite.frame == 6:
