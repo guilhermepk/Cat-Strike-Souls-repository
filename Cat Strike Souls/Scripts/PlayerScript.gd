@@ -14,15 +14,26 @@ var movimentScenes = [
 var inBox = false
 var alive = true
 
+func resetScene():
+	get_tree().change_scene("res://Scenes/Fase.tscn")
+
+
 func executeTimer(time, function):
+	#usar como string o nome da função do parâmetro
+	#exemplo: func printar(): tem que passar como "printar"
 	timer.connect("timeout", self, function)
 	timer.wait_time = time
 	timer.one_shot = true
 	add_child(timer)
 	timer.start()
 
+func printar():
+	print('oi')
+
 func _process(delta):
 	var currentScene = get_tree().current_scene.filename
+	
+	
 	
 	if currentScene in movimentScenes:
 		$Camera2D.current = true
@@ -79,16 +90,20 @@ func _process(delta):
 		else:
 			motion.x = 0
 			motion.y = 0
+			
+			
+			print('morreu')
 			$AnimatedSprite.play('die')
-			$Camera2D/AnimationPlayer/ColorRect.rect_position = position
-			$Camera2D/AnimationPlayer/ColorRect.visible = true
-			$Camera2D/AnimationPlayer.play("fade")
-			Timer
-			
-			get_tree().change_scene("res://Scenes/Fase.tscn")
-			
 			if $AnimatedSprite.frame == 6:
 				$AnimatedSprite.playing = false
+			$Camera2D/AnimationPlayer/ColorRect.rect_position.x = position.x-640
+			$Camera2D/AnimationPlayer/ColorRect.rect_position.y = position.y-360
+			$Camera2D/AnimationPlayer/ColorRect.visible = true
+			$Camera2D/AnimationPlayer.play("fade")
+			yield(get_tree().create_timer(3.0), "timeout")
+			print('fim')
+			resetScene()
+			
 	else:
 		$Camera2D.current = false
 		
