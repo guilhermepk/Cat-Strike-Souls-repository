@@ -44,7 +44,7 @@ func _process(delta):
 	else:
 		$AnimatedSprite.play("idle")
 	
-	#move_and_slide(motion)
+	move_and_slide(motion)
 
 func followPlayer(player):
 	var playerX = player.position.x
