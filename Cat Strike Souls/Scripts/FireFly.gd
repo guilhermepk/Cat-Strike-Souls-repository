@@ -28,7 +28,6 @@ func _ready():
 		spd = random.randf_range(-limitSpd, limitSpd)
 	motion.x = spd
 	motion.y = spd
-	print('x e y:', spd)
 	
 func _process(delta):
 	#y -100 a 1400

@@ -61,7 +61,7 @@ position = Vector2( 8.00003, 791 )
 scale = Vector2( 5, 5 )
 
 [node name="Player" parent="Elements/YSort" instance=ExtResource( 2 )]
-position = Vector2( 70, 1363 )
+position = Vector2( 6.00001, 1415 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Elements/YSort/Player"]
@@ -112,7 +112,7 @@ position = Vector2( -517, 1159 )
 position = Vector2( -612, 1319 )
 
 [node name="FireFly12" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
-position = Vector2( 488, 1238 )
+position = Vector2( 1036, 1341 )
 
 [node name="FireFly13" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
 position = Vector2( 568, 966 )
@@ -218,11 +218,11 @@ position = Vector2( -46, -80 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Candle7" parent="Elements/YSort" instance=ExtResource( 13 )]
-position = Vector2( -58, 584 )
+position = Vector2( -129, 552 )
 scale = Vector2( 2, 2 )
 
 [node name="Candle8" parent="Elements/YSort" instance=ExtResource( 13 )]
-position = Vector2( 60, 477 )
+position = Vector2( 25, 442 )
 scale = Vector2( 2, 2 )
 
 [node name="Candle9" parent="Elements/YSort" instance=ExtResource( 13 )]

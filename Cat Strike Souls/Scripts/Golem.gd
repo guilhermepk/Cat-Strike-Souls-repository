@@ -52,18 +52,19 @@ func followPlayer(player):
 	var x = position.x
 	var y = position.y
 	
-	if playerX > x+5:
+	if playerX > x+35*scale.x:
 		motion.x += spd
 		$AnimatedSprite.flip_h = false
 		$Arm/CollisionPolygon2D.scale.x = 1
 		$Arm/CollisionPolygon2D.position.x = -3
-	elif playerX < x-5:
+	elif playerX < x-35*scale.x:
 		motion.x -= spd
 		$AnimatedSprite.flip_h = true
 		$Arm/CollisionPolygon2D.scale.x = -1
 		$Arm/CollisionPolygon2D.position.x = 3
 	else:
 		motion.x = 0
+		
 	if playerY > y+5:
 		motion.y += spd
 	elif playerY < y-5:
