@@ -17,6 +17,7 @@ var playerTooNear = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
+	$AnimatedSprite.play("idle")
 
 func _process(delta):
 	if motion.x > limit_spd:
