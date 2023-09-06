@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/TileMaps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/Personagens/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/Entities/Objetcs/Columns/Column.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/QuitButton.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/BackButton.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Entities/Personagens/FireFly.tscn" type="PackedScene" id=17]
 
 [node name="Fase" type="Node2D"]
 
@@ -74,6 +75,92 @@ scale = Vector2( 0.5, 0.5 )
 [node name="BackButton" parent="Elements/YSort/Player/VBoxContainer" instance=ExtResource( 16 )]
 position = Vector2( 238.4, -137.2 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="FireFlies" type="Node2D" parent="Elements/YSort"]
+
+[node name="FireFly" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 115, 1355 )
+
+[node name="FireFly2" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -631, 1115 )
+
+[node name="FireFly3" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 330, 21 )
+
+[node name="FireFly4" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -235, 106 )
+
+[node name="FireFly5" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 90, 60 )
+
+[node name="FireFly6" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -561, 347 )
+
+[node name="FireFly7" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 495, 347 )
+
+[node name="FireFly8" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -399, 611 )
+
+[node name="FireFly9" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -717, 972 )
+
+[node name="FireFly10" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -517, 1159 )
+
+[node name="FireFly11" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -612, 1319 )
+
+[node name="FireFly12" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 488, 1238 )
+
+[node name="FireFly13" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 568, 966 )
+
+[node name="FireFly14" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 712, 735 )
+
+[node name="FireFly15" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 182, 369 )
+
+[node name="FireFly16" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -120, 390 )
+
+[node name="FireFly17" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -173, 636 )
+
+[node name="FireFly18" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 202, 630 )
+
+[node name="FireFly19" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 202, 525 )
+
+[node name="FireFly20" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -227, 526 )
+
+[node name="FireFly21" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -180, 630 )
+
+[node name="FireFly22" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -242, 621 )
+
+[node name="FireFly23" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -223, 605 )
+
+[node name="FireFly24" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( -219, 645 )
+
+[node name="FireFly25" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 210, 565 )
+
+[node name="FireFly26" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 228, 638 )
+
+[node name="FireFly27" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 215, 417 )
+
+[node name="FireFly28" parent="Elements/YSort/FireFlies" instance=ExtResource( 17 )]
+position = Vector2( 129, 337 )
 
 [node name="Caixa" parent="Elements/YSort" instance=ExtResource( 5 )]
 position = Vector2( 600, 1352 )

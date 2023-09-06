@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var motion = Vector2.ZERO
 var spd = 50
-var limit_spd = 300
+var limit_spd = 250
 var desac = 25
 
 var timer = Timer.new()
@@ -18,22 +18,8 @@ func resetScene():
 	get_tree().change_scene("res://Scenes/Fase.tscn")
 
 
-func executeTimer(time, function):
-	#usar como string o nome da função do parâmetro
-	#exemplo: func printar(): tem que passar como "printar"
-	timer.connect("timeout", self, function)
-	timer.wait_time = time
-	timer.one_shot = true
-	add_child(timer)
-	timer.start()
-
-func printar():
-	print('oi')
-
 func _process(delta):
 	var currentScene = get_tree().current_scene.filename
-	
-	
 	
 	if currentScene in movimentScenes:
 		$Camera2D.current = true
@@ -90,7 +76,6 @@ func _process(delta):
 		else:
 			motion.x = 0
 			motion.y = 0
-			
 			
 			print('morreu')
 			$AnimatedSprite.play('die')
