@@ -10,9 +10,9 @@ var rng = RandomNumberGenerator.new()
 var follow
 var player
 
-var playerInArm
-
-var playerNearby
+var playerInArm = false
+var playerNearby = false
+var playerTooNear = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,7 +39,9 @@ func _process(delta):
 		print('Jogador atacado')
 		player.alive = false
 	
-	if playerNearby and player.alive:
+	if playerTooNear and player.alive:
+		$AnimatedSprite.play("shine")
+	elif playerNearby and player.alive:
 		$AnimatedSprite.play("attack")
 	else:
 		$AnimatedSprite.play("idle")
@@ -71,6 +73,18 @@ func followPlayer(player):
 		motion.y -= spd
 	else:
 		motion.y = 0
+	
+	var xInside
+	var yInside
+	if playerX < x+30*scale.x and playerX > x-35*scale.x:
+		xInside = true
+	if playerY < y+5*scale.x and playerY > y-5*scale.x:
+		yInside = true
+		
+	if xInside and yInside:
+		playerTooNear = true
+	else:
+		playerTooNear = false
 
 func _on_GolemArea2D_body_entered(body):
 	print('Boss encostou em ', body.name)
