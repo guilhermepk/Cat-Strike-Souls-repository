@@ -17,9 +17,14 @@ var alive = true
 func resetScene():
 	get_tree().change_scene("res://Scenes/Fase.tscn")
 
+func _ready():
+	$AnimatedSprite.play("idle")
 
 func _process(delta):
 	var currentScene = get_tree().current_scene.filename
+	
+	if Input.is_key_pressed(88):
+		print('x')
 	
 	if currentScene in movimentScenes:
 		$Camera2D.current = true
@@ -37,7 +42,7 @@ func _process(delta):
 			if motion.x != 0 or motion.y != 0:
 				$AnimatedSprite.play("run")
 			else:
-				$AnimatedSprite.play("idle")	
+				$AnimatedSprite.play("idle")
 			if !inBox:
 				##Movimentação
 				if Input.is_action_pressed("ui_right"):
