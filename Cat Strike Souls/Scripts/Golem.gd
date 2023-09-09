@@ -52,6 +52,10 @@ func _process(delta):
 		$AnimationPlayer.play("shineAttack")
 	elif playerNearby and player.alive:
 		$AnimatedSprite.play("attack")
+	elif !playerInInfluence:
+		$AnimatedSprite.play("asteroid")
+		if $AnimatedSprite.frame == 7:
+			$AnimatedSprite.playing = false 
 	else:
 		$AnimatedSprite.play("idle")
 	
@@ -75,19 +79,20 @@ func followPlayer(player):
 		$Arm/CollisionPolygon2D.position.x = 3
 	else:
 		motion.x = 0
-		
-	if playerY > y+5:
+	
+	if playerY > y+5*scale.y:
 		motion.y += spd
-	elif playerY < y-5:
+	elif playerY < y-5*scale.y:
 		motion.y -= spd
 	else:
 		motion.y = 0
+		#motion.y += rng.randi_range()
 	
 	var xInside
 	var yInside
 	if playerX < x+30*scale.x and playerX > x-30*scale.x:
 		xInside = true
-	if playerY < y+5*scale.x and playerY > y-5*scale.x:
+	if playerY < y+30*scale.x and playerY > y-30*scale.x:
 		yInside = true
 		
 	if xInside and yInside:
