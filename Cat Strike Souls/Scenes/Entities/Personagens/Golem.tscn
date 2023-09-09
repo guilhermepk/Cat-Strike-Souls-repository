@@ -350,7 +350,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=83]
 resource_name = "shineAttack"
-length = 2.5
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Light2D:energy")
 tracks/0/interp = 1
@@ -371,7 +371,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, -18 )
 frames = SubResource( 5 )
 animation = "shine"
-frame = 7
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

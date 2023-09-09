@@ -65,16 +65,19 @@ position = Vector2( 7.62939e-06, 1410 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Elements/YSort/Player"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="QuitButton" parent="Elements/YSort/Player/VBoxContainer" instance=ExtResource( 15 )]
-position = Vector2( 238.8, -124.8 )
-scale = Vector2( 0.5, 0.5 )
+margin_left = -256.0
+margin_top = -144.0
+margin_right = 1024.0
+margin_bottom = 576.0
+rect_scale = Vector2( 0.4, 0.4 )
 
 [node name="BackButton" parent="Elements/YSort/Player/VBoxContainer" instance=ExtResource( 16 )]
-position = Vector2( 238.4, -137.2 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 1213, 26 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="QuitButton" parent="Elements/YSort/Player/VBoxContainer" instance=ExtResource( 15 )]
+position = Vector2( 1213, 77.2162 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="FireFlies" type="Node2D" parent="Elements/YSort"]
 
