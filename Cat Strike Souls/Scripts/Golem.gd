@@ -38,13 +38,11 @@ func _process(delta):
 		motion.y = 0
 		
 	if playerInArm and $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 7:
-		print('Jogador atacado por garra')
 		player.alive = false
 	
 	var animationTime = $AnimationPlayer.current_animation_position
 	if animationTime >= 1.25 and animationTime <= 1.75:
 		if playerNearby:
-			print('Jogador atacado por explosão em ', animationTime, ' segundos de explosão')
 			player.alive = false
 	
 	if playerTooNear and player.alive:

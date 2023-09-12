@@ -11,11 +11,28 @@ var movimentScenes = [
 	"res://Scenes/Fase.tscn"
 ]
 
+var upPressed = false
+var downPressed = false
+var rightPressed = false
+var leftPressed = false
+
 var inBox = false
 var alive = true
 
+var attacking = false
+
 func resetScene():
 	get_tree().change_scene("res://Scenes/Fase.tscn")
+
+func attack():
+	$AnimatedSprite.play("attack")
+	var cur_anim = $AnimatedSprite.animation
+	var anim_spd = $AnimatedSprite.frames.get_animation_speed(cur_anim)
+	var anim_frames = $AnimatedSprite.frames.get_frame_count(cur_anim)
+	var attackTime = anim_frames / anim_spd
+	
+	yield(get_tree().create_timer(attackTime), "timeout")
+	attacking = false
 
 func _ready():
 	$AnimatedSprite.play("idle")
@@ -23,8 +40,10 @@ func _ready():
 func _process(delta):
 	var currentScene = get_tree().current_scene.filename
 	
-	if Input.is_key_pressed(88):
-		print('x')
+	rightPressed = true if (Input.is_action_pressed("ui_right")) else false
+	leftPressed = true if (Input.is_action_pressed("ui_left")) else false
+	upPressed = true if (Input.is_action_pressed("ui_up")) else false
+	downPressed = true if (Input.is_action_pressed("ui_down")) else false
 	
 	if currentScene in movimentScenes:
 		$Camera2D.current = true
@@ -39,33 +58,43 @@ func _process(delta):
 			motion.y = -limit_spd
 			
 		if alive:
-			if motion.x != 0 or motion.y != 0:
-				$AnimatedSprite.play("run")
-			else:
-				$AnimatedSprite.play("idle")
 			if !inBox:
-				##Movimentação
-				if Input.is_action_pressed("ui_right"):
-					motion.x += spd
-					$AnimatedSprite.flip_h = false
-				elif Input.is_action_pressed("ui_left"):
-					motion.x -= spd
-					$AnimatedSprite.flip_h = true
+				if !attacking:
+					if Input.is_key_pressed(88):
+						attacking = true
+						attack()
+						
+					##Movimentação
+					if rightPressed:
+						motion.x += spd
+						$AnimatedSprite.flip_h = false
+					elif leftPressed:
+						motion.x -= spd
+						$AnimatedSprite.flip_h = true
+					else:
+						if motion.x > 0:
+							motion.x -= desac
+						elif motion.x < 0:
+							motion.x += desac
+					
+					if upPressed:
+						motion.y -= spd
+					elif downPressed:
+						motion.y += spd
+					else:
+						if motion.y > 0:
+							motion.y -= desac
+						elif motion.y < 0:
+							motion.y += desac
+						
+				if attacking:
+					motion.x = 0
+					motion.y = 0
+					$AnimatedSprite.play("attack")
+				elif motion.x != 0 or motion.y != 0:
+					$AnimatedSprite.play("run")
 				else:
-					if motion.x > 0:
-						motion.x -= desac
-					elif motion.x < 0:
-						motion.x += desac
-				
-				if Input.is_action_pressed("ui_up"):
-					motion.y -= spd
-				elif Input.is_action_pressed("ui_down"):
-					motion.y += spd
-				else:
-					if motion.y > 0:
-						motion.y -= desac
-					elif motion.y < 0:
-						motion.y += desac
+					$AnimatedSprite.play("idle")
 			else:
 				motion.x = 0
 				motion.y = 0
@@ -81,8 +110,6 @@ func _process(delta):
 		else:
 			motion.x = 0
 			motion.y = 0
-			
-			print('morreu')
 			$AnimatedSprite.play('die')
 			if $AnimatedSprite.frame == 6:
 				$AnimatedSprite.playing = false
@@ -91,10 +118,12 @@ func _process(delta):
 			$Camera2D/AnimationPlayer/ColorRect.visible = true
 			$Camera2D/AnimationPlayer.play("fade")
 			yield(get_tree().create_timer(3.0), "timeout")
-			print('fim')
+			print('jogador morreu')
 			resetScene()
 			
 	else:
+		motion.x = 0
+		motion.y = 0
 		$Camera2D.current = false
 		
 	move_and_slide(motion)
