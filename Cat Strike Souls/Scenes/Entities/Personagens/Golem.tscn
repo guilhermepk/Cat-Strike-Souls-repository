@@ -408,7 +408,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, -18 )
 frames = SubResource( 5 )
 animation = "wake_up"
-frame = 5
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -424,6 +424,7 @@ rotation = 1.5708
 shape = SubResource( 46 )
 
 [node name="Influence" type="Area2D" parent="."]
+visible = false
 position = Vector2( 0, -10 )
 scale = Vector2( 0.980864, 1 )
 
@@ -432,6 +433,7 @@ position = Vector2( 0, 4 )
 shape = SubResource( 72 )
 
 [node name="InfluenceNearby" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InfluenceNearby"]
 position = Vector2( 0, -6 )

@@ -8,7 +8,8 @@ var desac = 20
 var timer = Timer.new()
 
 var movimentScenes = [
-	"res://Scenes/Fase.tscn"
+	"res://Scenes/Fase.tscn",
+	"res://Scenes/StartHall.tscn"
 ]
 
 var upPressed = false
