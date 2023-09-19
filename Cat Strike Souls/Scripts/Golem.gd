@@ -15,10 +15,13 @@ var playerNearby = false
 var playerInArm = false
 var playerTooNear = false
 
-# Called when the node enters the scene tree for the first time.
+var sleeping = true
+
 func _ready():
 	rng.randomize()
-	$AnimatedSprite.play("idle")
+	$AnimatedSprite.play("wake_up")
+	$AnimatedSprite.playing = false
+	$AnimatedSprite.frame = 0
 
 func _process(delta):
 	if motion.x > limit_spd:
@@ -31,7 +34,7 @@ func _process(delta):
 	elif motion.y < -limit_spd:
 		motion.y = -limit_spd
 	
-	if follow and !player.inBox:
+	if follow and !player.inBox and !sleeping:
 		followPlayer(player)
 	else:
 		motion.x = 0
@@ -45,19 +48,33 @@ func _process(delta):
 		if playerNearby:
 			player.alive = false
 	
-	if playerTooNear and player.alive:
-		$AnimatedSprite.play("shine")
-		$AnimationPlayer.play("shineAttack")
-	elif playerNearby and player.alive:
-		$AnimatedSprite.play("attack")
-	elif !playerInInfluence:
-		$AnimatedSprite.play("asteroid")
-		if $AnimatedSprite.frame == 7:
-			$AnimatedSprite.playing = false 
-	else:
-		$AnimatedSprite.play("idle")
+	if sleeping and playerNearby:
+		wakeUp()
+	elif !sleeping:
+		if playerTooNear and player.alive:
+			$AnimatedSprite.play("shine")
+			$AnimationPlayer.play("shineAttack")
+		elif playerNearby and player.alive:
+			$AnimatedSprite.play("attack")
+		elif !playerInInfluence:
+			$AnimatedSprite.play("asteroid")
+			if $AnimatedSprite.frame == 7 and $AnimatedSprite.animation == 'asteroid':
+				$AnimatedSprite.playing = false 
+		else:
+			$AnimatedSprite.play("idle")
 	
 	move_and_slide(motion)
+
+func wakeUp():
+	$AnimatedSprite.play("wake_up")
+	$AnimatedSprite.playing = true
+	var cur_anim = $AnimatedSprite.animation
+	var anim_spd = $AnimatedSprite.frames.get_animation_speed(cur_anim)
+	var anim_frames = $AnimatedSprite.frames.get_frame_count(cur_anim)
+	var animTime = anim_frames / anim_spd
+	
+	yield(get_tree().create_timer(animTime), "timeout")
+	sleeping = false
 
 func followPlayer(player):
 	var playerX = player.position.x
