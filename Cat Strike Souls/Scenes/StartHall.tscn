@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/TileMaps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/Personagens/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Entities/Objetcs/Candle.tscn" type="PackedScene" id=3]
 
 [node name="StartHall" type="Node2D"]
 
@@ -28,9 +29,13 @@ tile_data = PoolIntArray( -1, 79, 0, -65536, 79, 0, -65535, 79, 0, -65534, 79, 0
 [node name="YSort" type="YSort" parent="Elements"]
 
 [node name="Player" parent="Elements/YSort" instance=ExtResource( 2 )]
-position = Vector2( 160, 102 )
+position = Vector2( 324, 55 )
+
+[node name="Candle" parent="Elements/YSort" instance=ExtResource( 3 )]
+position = Vector2( 304, 36 )
+scale = Vector2( 2, 2 )
 
 [node name="TileMap" parent="Elements/YSort" instance=ExtResource( 1 )]
 position = Vector2( -286, 123 )
 scale = Vector2( 2, 2 )
-tile_data = PoolIntArray( -1, 70, 0, -65536, 71, 0, -65535, 71, 0, -65534, 71, 0, -65533, 71, 0, -65532, 71, 0, -65531, 71, 0, -65530, 71, 0, 65535, 74, 0, 7, 86, 0, 131071, 74, 0, 65543, 86, 0, 196607, 74, 0, 131079, 86, 0, 262143, 75, 0, 196608, 76, 0, 196609, 76, 0, 196610, 76, 0, 196611, 76, 0, 196612, 76, 0, 196613, 178, 0, 196614, 178, 1, 196615, 77, 0, 327679, 78, 0, 262144, 79, 0, 262145, 79, 0, 262146, 79, 0, 262147, 79, 0, 262148, 79, 0, 262149, 178, 65536, 262150, 178, 65537, 262151, 80, 0, 327685, 178, 131072, 327686, 178, 131073 )
+tile_data = PoolIntArray( -1, 70, 0, -65536, 71, 0, -65535, 71, 0, -65534, 71, 0, -65533, 71, 0, -65532, 71, 0, -65531, 71, 0, -65530, 71, 0, -65528, 73, 0, -65527, 73, 0, 65535, 74, 0, 7, 86, 0, 131071, 74, 0, 65543, 86, 0, 196607, 74, 0, 131079, 86, 0, 262143, 75, 0, 196608, 76, 0, 196609, 76, 0, 196610, 76, 0, 196611, 76, 0, 196612, 76, 0, 196613, 178, 0, 196614, 178, 1, 196615, 77, 0, 327679, 78, 0, 262144, 79, 0, 262145, 79, 0, 262146, 79, 0, 262147, 79, 0, 262148, 79, 0, 262149, 178, 65536, 262150, 178, 65537, 262151, 80, 0, 327685, 178, 131072, 327686, 178, 131073 )
