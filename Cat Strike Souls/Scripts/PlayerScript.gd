@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 var motion = Vector2.ZERO
-var spd = 50
-var limit_spd = 250
-var desac = 25
+var spd = 20
+var limit_spd = 220
+var desac = 20
 
 var timer = Timer.new()
 

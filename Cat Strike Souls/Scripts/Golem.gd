@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var motion = Vector2.ZERO
-var spd = 50
-var limit_spd = 100
+var spd = 20
+var limit_spd = 140
 var desac = 10
 
 var rng = RandomNumberGenerator.new()
