@@ -22,6 +22,8 @@ var alive = true
 
 var attacking = false
 
+var currentScene
+
 func resetScene():
 	get_tree().change_scene("res://Scenes/Fase.tscn")
 
@@ -37,10 +39,9 @@ func attack():
 
 func _ready():
 	$AnimatedSprite.play("idle")
+	currentScene = get_tree().current_scene.filename
 
 func _process(delta):
-	var currentScene = get_tree().current_scene.filename
-	
 	rightPressed = true if (Input.is_action_pressed("ui_right")) else false
 	leftPressed = true if (Input.is_action_pressed("ui_left")) else false
 	upPressed = true if (Input.is_action_pressed("ui_up")) else false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://Assets/Sprites/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Golem.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Entities/Golem.gd" type="Script" id=2]
 [ext_resource path="res://Assets/light.jpg" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=48]

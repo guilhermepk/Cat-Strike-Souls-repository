@@ -16,7 +16,7 @@ func _process(delta):
 func on_button_pressed(button: Button):
 	match button.name:
 		"Play":
-			get_tree().change_scene("res://Scenes/Fase.tscn")
+			get_tree().change_scene("res://Scenes/StartHall.tscn")
 		"Controls":
 			get_tree().change_scene("res://Scenes/Menu/Controls.tscn")
 		"Quit":

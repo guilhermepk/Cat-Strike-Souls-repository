@@ -45,7 +45,7 @@ playing = true
 position = Vector2( -1.90735e-06, -80 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 4 )
-color = Color( 0.960784, 0.501961, 0.25098, 1 )
+color = Color( 0.960784, 0.588235, 0.25098, 1 )
 energy = 1.15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
