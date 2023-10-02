@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/TileMaps/ObjectsTiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Sprites/Pixel Art Top Down - Basic/Texture/TX Props.png" type="Texture" id=2]
 [ext_resource path="res://Assets/light.jpg" type="Texture" id=3]
+[ext_resource path="res://Scripts/Entities/Column.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -52,7 +53,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=9]
+radius = 26.0
+
 [node name="LittleColumn" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 position = Vector2( -16, 11 )
@@ -108,3 +113,11 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 color = Color( 0.32549, 0.807843, 0.905882, 1 )
 energy = 0.6
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 9 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
