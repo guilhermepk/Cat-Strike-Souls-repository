@@ -43,10 +43,12 @@ func _process(delta):
 	if playerInArm and $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 7:
 		player.alive = false
 	
-	var animationTime = $AnimationPlayer.current_animation_position
-	if animationTime >= 1.25 and animationTime <= 1.75:
-		if playerNearby:
-			player.alive = false
+	
+	if $AnimationPlayer.current_animation == 'shineAttack':
+		var animationTime = $AnimationPlayer.current_animation_position
+		if animationTime >= 1.25 and animationTime <= 1.75:
+			if playerNearby:
+				player.alive = false
 	
 	if sleeping and playerNearby:
 		wakeUp()

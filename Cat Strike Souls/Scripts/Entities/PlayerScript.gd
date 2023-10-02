@@ -8,8 +8,8 @@ var desac = 20
 var timer = Timer.new()
 
 var movimentScenes = [
-	"res://Scenes/Fase.tscn",
-	"res://Scenes/StartHall.tscn"
+	"Fase",
+	"StartHall"
 ]
 
 var upPressed = false
@@ -39,7 +39,7 @@ func attack():
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	currentScene = get_tree().current_scene.filename
+	currentScene = get_tree().current_scene.name
 
 func _process(delta):
 	rightPressed = true if (Input.is_action_pressed("ui_right")) else false
@@ -62,7 +62,7 @@ func _process(delta):
 		if alive:
 			if !inBox:
 				if !attacking:
-					if Input.is_key_pressed(88):
+					if Input.is_key_pressed(67): # 67 = c
 						attacking = true
 						attack()
 						

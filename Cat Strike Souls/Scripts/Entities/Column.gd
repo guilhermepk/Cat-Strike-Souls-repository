@@ -1,24 +1,16 @@
 extends Node2D
 
-var playerAround = false
 var player
+var XKey
 
 func _ready():
-	pass
-
-func _process(delta):
-	if playerAround:
-		pass
-
+	player = get_tree().current_scene.get_node('Elements/YSort/Player')
+	XKey = player.get_node('XKey')
 
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
-		player = body
-		print('player entrou')
-		playerAround = true
-
+		XKey.visible = true
 
 func _on_Area2D_body_exited(body):
 	if body.name == 'Player':
-		print('player saiu')
-		playerAround = false
+		XKey.visible = false

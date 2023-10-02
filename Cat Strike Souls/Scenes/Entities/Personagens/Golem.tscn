@@ -408,7 +408,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, -18 )
 frames = SubResource( 5 )
 animation = "wake_up"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Assets/Sprites/Cat/WhiteCatIdle.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Entities/PlayerScript.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Sprites/Cat/WhiteCatDamage.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/Cat/WhiteCatDie.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/Cat/CatAttack.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Entities/KeyboardKeysScenes/XKey.tscn" type="PackedScene" id=8]
 
 [sub_resource type="AtlasTexture" id=116]
 atlas = ExtResource( 7 )
@@ -360,12 +361,17 @@ script = ExtResource( 2 )
 position = Vector2( 0, -3 )
 frames = SubResource( 42 )
 animation = "idle"
-frame = 4
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
 shape = SubResource( 87 )
+
+[node name="XKey" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 13.3333, -13.3333 )
+z_index = 100
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 1.23978e-05, 0 )
