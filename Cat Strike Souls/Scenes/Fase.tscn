@@ -15,7 +15,7 @@
 [ext_resource path="res://Scenes/Entities/Objetcs/Candle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Entities/Objetcs/Columns/Column.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Entities/Personagens/FireFly.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Entities/Objetcs/Tree0.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/Tree0.tscn" type="PackedScene" id=18]
 
 [node name="Fase" type="Node2D"]
 
@@ -58,7 +58,7 @@ tile_data = PoolIntArray( -131086, 81, 0, -196595, 85, 0, -65550, 86, 0, -131059
 position = Vector2( 4, 514 )
 
 [node name="Golem" parent="Elements/YSort" instance=ExtResource( 6 )]
-position = Vector2( -618, 465 )
+position = Vector2( 7.62939e-06, 621 )
 scale = Vector2( 5, 5 )
 
 [node name="Player" parent="Elements/YSort" instance=ExtResource( 2 )]

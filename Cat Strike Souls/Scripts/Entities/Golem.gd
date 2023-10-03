@@ -50,7 +50,7 @@ func _process(delta):
 			if playerNearby:
 				player.alive = false
 	
-	if sleeping and playerNearby:
+	if sleeping and playerInInfluence:
 		wakeUp()
 	elif !sleeping:
 		if playerTooNear and player.alive:

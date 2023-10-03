@@ -350,10 +350,10 @@ animations = [ {
 "name": "shine",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 84 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ) ],
+"frames": [ SubResource( 84 ), SubResource( 84 ), SubResource( 84 ), SubResource( 84 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ) ],
 "loop": true,
 "name": "wake_up",
-"speed": 5.0
+"speed": 2.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=47]
@@ -408,7 +408,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, -18 )
 frames = SubResource( 5 )
 animation = "wake_up"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -433,7 +433,6 @@ position = Vector2( 0, 4 )
 shape = SubResource( 72 )
 
 [node name="InfluenceNearby" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InfluenceNearby"]
 position = Vector2( 0, -6 )
