@@ -7,7 +7,7 @@ var desac = 20
 
 var timer = Timer.new()
 
-var movimentScenes = [
+var movementScenes = [
 	"Fase",
 	"StartHall"
 ]
@@ -40,6 +40,11 @@ func attack():
 func _ready():
 	$AnimatedSprite.play("idle")
 	currentScene = get_tree().current_scene.name
+	
+	if currentScene in movementScenes:
+		$HUD.visible = true
+	else:
+		$HUD.visible = false
 
 func _process(delta):
 	rightPressed = true if (Input.is_action_pressed("ui_right")) else false
@@ -47,7 +52,7 @@ func _process(delta):
 	upPressed = true if (Input.is_action_pressed("ui_up")) else false
 	downPressed = true if (Input.is_action_pressed("ui_down")) else false
 	
-	if currentScene in movimentScenes:
+	if currentScene in movementScenes:
 		$Camera2D.current = true
 		if motion.x > limit_spd:
 			motion.x = limit_spd

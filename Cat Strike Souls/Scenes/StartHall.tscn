@@ -56,6 +56,7 @@ tile_data = PoolIntArray( 983059, 175, 0, 983060, 175, 1, 1048595, 175, 65536, 1
 
 [node name="Player" parent="Elements/YSort" instance=ExtResource( 2 )]
 position = Vector2( -28, 12 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="Candle4" parent="Elements/YSort" instance=ExtResource( 3 )]
 position = Vector2( 393, 758 )
