@@ -14,6 +14,7 @@ func charge():
 	if currentEnergy < symbols.size():
 		symbols[currentEnergy].visible = true
 		currentEnergy += 1
+	yield(get_tree().create_timer(5), 'timeout')
 		
 func _ready():
 	player = get_tree().current_scene.get_node('Elements/YSort/Player')
@@ -27,7 +28,6 @@ func _process(delta):
 	if playerAround:
 		if Input.is_key_pressed(88): # 88 = x
 			charge()
-			yield(get_tree().create_timer(5), 'timeout')
 				
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
