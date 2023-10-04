@@ -15,7 +15,7 @@ func charge():
 	var currentLight = currentSymbol.get_node('Light2D')
 	var currentEnergy = currentLight.energy
 	if currentEnergy >= maxEnergy == false:
-		currentLight.energy += 0.01
+		currentLight.energy += 0.03
 		var energyPercent = (currentEnergy * 100) / maxEnergy
 		var currentAlpha = (1 * energyPercent) / 100
 		currentSymbol.modulate.a = currentAlpha
@@ -25,7 +25,7 @@ func charge():
 		
 func _ready():
 	player = get_tree().current_scene.get_node('Elements/YSort/Player')
-	XKey = player.get_node('XKey')
+	XKey = player.get_node('HUD/XKey')
 	
 	symbols = $TileMap/LightEffects.get_children()
 	for symbol in symbols:
@@ -52,7 +52,8 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
 		playerAround = true
-		XKey.visible = true
+		if !fullyCharged:
+			XKey.visible = true
 		
 
 func _on_Area2D_body_exited(body):

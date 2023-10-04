@@ -58,7 +58,7 @@ tile_data = PoolIntArray( -131086, 81, 0, -196595, 85, 0, -65550, 86, 0, -131059
 position = Vector2( 4, 514 )
 
 [node name="Golem" parent="Elements/YSort" instance=ExtResource( 6 )]
-position = Vector2( 7.62939e-06, 621 )
+position = Vector2( 4, 623 )
 scale = Vector2( 5, 5 )
 
 [node name="Player" parent="Elements/YSort" instance=ExtResource( 2 )]
@@ -279,5 +279,3 @@ tile_data = PoolIntArray( -12, 75, 0, -11, 83, 0, -10, 83, 0, -9, 83, 0, -8, 83,
 position = Vector2( 0, 1536 )
 scale = Vector2( 2, 2 )
 tile_data = PoolIntArray( -2, 174, 1, -1, 174, 2, -65536, 174, 2, -65535, 174, 3, 65534, 174, 65537, 65535, 174, 65538, 0, 174, 65538, 1, 174, 65539, 131070, 174, 65537, 131071, 174, 65538, 65536, 174, 65538, 65537, 174, 65539, 196606, 174, 65537, 196607, 174, 65538, 131072, 174, 65538, 131073, 174, 65539, 262142, 174, 131073, 262143, 174, 131074, 196608, 174, 131074, 196609, 174, 131075, 327678, 75, 0, 327679, 76, 0, 262144, 76, 0, 262145, 77, 0, 393214, 78, 0, 393215, 79, 0, 327680, 79, 0, 327681, 80, 0 )
-
-[node name="Columns" type="Node2D" parent="Elements/YSort"]

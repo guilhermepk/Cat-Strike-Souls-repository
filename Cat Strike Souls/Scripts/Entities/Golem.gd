@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 var motion = Vector2.ZERO
-var spd = 20
-var limit_spd = 140
-var desac = 10
+var spd = 15
+var limit_spd = 150
+var desac = 5
 
 var rng = RandomNumberGenerator.new()
 
@@ -16,6 +16,7 @@ var playerInArm = false
 var playerTooNear = false
 
 var sleeping = true
+var stunned = false
 
 func _ready():
 	rng.randomize()
@@ -24,6 +25,8 @@ func _ready():
 	$AnimatedSprite.frame = 0
 
 func _process(delta):
+	print('x ', motion.x, ' y ', motion.y)
+	
 	if motion.x > limit_spd:
 		motion.x = limit_spd
 	elif motion.x < -limit_spd:
@@ -34,7 +37,7 @@ func _process(delta):
 	elif motion.y < -limit_spd:
 		motion.y = -limit_spd
 	
-	if follow and !player.inBox and !sleeping:
+	if follow and !player.inBox and !sleeping and !stunned:
 		followPlayer(player)
 	else:
 		motion.x = 0
@@ -47,14 +50,17 @@ func _process(delta):
 	if $AnimationPlayer.current_animation == 'shineAttack':
 		var animationTime = $AnimationPlayer.current_animation_position
 		if animationTime >= 1.25 and animationTime <= 1.75:
-			if playerNearby:
+			if playerNearby and !player.inBox:
 				player.alive = false
+			stun_golem()
 	
 	if sleeping and playerInInfluence:
 		wakeUp()
 	elif !sleeping:
 		if playerTooNear and player.alive:
 			$AnimatedSprite.play("shine")
+			player.get_node('HUD/Warning').visible = true
+			yield(get_tree().create_timer(1), "timeout")
 			$AnimationPlayer.play("shineAttack")
 		elif playerNearby and player.alive:
 			$AnimatedSprite.play("attack")
@@ -66,6 +72,12 @@ func _process(delta):
 			$AnimatedSprite.play("idle")
 	
 	move_and_slide(motion)
+
+func stun_golem():
+	stunned = true
+	yield(get_tree().create_timer(1), "timeout")
+	stunned = false
+	player.get_node('HUD/Warning').visible = false
 
 func wakeUp():
 	$AnimatedSprite.play("wake_up")
