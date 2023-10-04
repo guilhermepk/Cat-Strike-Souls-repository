@@ -25,8 +25,6 @@ func _ready():
 	$AnimatedSprite.frame = 0
 
 func _process(delta):
-	print('x ', motion.x, ' y ', motion.y)
-	
 	if motion.x > limit_spd:
 		motion.x = limit_spd
 	elif motion.x < -limit_spd:
@@ -64,10 +62,10 @@ func _process(delta):
 			$AnimationPlayer.play("shineAttack")
 		elif playerNearby and player.alive:
 			$AnimatedSprite.play("attack")
-		elif !playerInInfluence:
-			$AnimatedSprite.play("asteroid")
-			if $AnimatedSprite.frame == 7 and $AnimatedSprite.animation == 'asteroid':
-				$AnimatedSprite.playing = false 
+#		elif !playerInInfluence:
+#			$AnimatedSprite.play("asteroid")
+#			if $AnimatedSprite.frame == 7 and $AnimatedSprite.animation == 'asteroid':
+#				$AnimatedSprite.playing = false 
 		else:
 			$AnimatedSprite.play("idle")
 	
@@ -130,34 +128,35 @@ func followPlayer(player):
 		playerTooNear = false
 
 func _on_GolemArea2D_body_entered(body):
-	print('Boss encostou em ', body.name)
+	#print('Boss encostou em ', body.name)
+	pass
 
 func _on_Influence_body_entered(body):
 	if body.name == 'Player':
-		print('Player entrou na área de influência')
+		#print('Player entrou na área de influência')
 		player = body
-		print(player)
+		#print(player)
 		follow = true
 		playerInInfluence = true
 
 
 func _on_Influence_body_exited(body):
 	if body.name == 'Player':
-		print('Player saiu da área de influência')
-		follow = false
+		#print('Player saiu da área de influência')
+		#follow = false
 		playerInInfluence = false
 		
 
 
 func _on_InfluenceNearby_body_entered(body):
 	if body.name == 'Player':
-		print('Player entrou na área próxima')
+		#print('Player entrou na área próxima')
 		playerNearby = true
 
 
 func _on_InfluenceNearby_body_exited(body):
 	if body.name == 'Player':
-		print('Player saiu da área próxima')
+		#print('Player saiu da área próxima')
 		playerNearby = false
 		$AnimatedSprite.play('idle')
 

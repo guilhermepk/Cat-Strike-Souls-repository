@@ -438,6 +438,7 @@ position = Vector2( 0, -6 )
 shape = SubResource( 73 )
 
 [node name="Arm" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arm"]
 position = Vector2( -3, 0 )
