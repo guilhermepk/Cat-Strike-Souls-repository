@@ -10,6 +10,8 @@ var rng = RandomNumberGenerator.new()
 var follow
 var player
 
+var statue
+
 var playerInInfluence = false
 var playerNearby = false
 var playerInArm = false
@@ -129,7 +131,9 @@ func followPlayer(player):
 
 func _on_GolemArea2D_body_entered(body):
 	#print('Boss encostou em ', body.name)
-	pass
+	if body.name == 'Statue':
+		if body.activated:
+			body.breaking = true
 
 func _on_Influence_body_entered(body):
 	if body.name == 'Player':
