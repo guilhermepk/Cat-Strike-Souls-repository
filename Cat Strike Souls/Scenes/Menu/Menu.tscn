@@ -7,9 +7,9 @@
 [ext_resource path="res://Scenes/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Entities/Objetcs/Candle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Entities/Objetcs/Door.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Entities/Objetcs/Trees/Tree1.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Entities/Objetcs/Trees/Tree0.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Entities/Objetcs/Trees/Tree2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/1Tree.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/0Tree.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/2Tree.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50

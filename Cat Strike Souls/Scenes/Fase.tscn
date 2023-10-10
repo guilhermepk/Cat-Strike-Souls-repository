@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/TileMaps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/Personagens/Player.tscn" type="PackedScene" id=2]
@@ -14,8 +14,11 @@
 [ext_resource path="res://Scenes/Entities/Objetcs/Bench.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Entities/Objetcs/Candle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Entities/Objetcs/Columns/Column.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/1Tree.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/TileMaps/Plants.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Entities/Personagens/FireFly.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Entities/Objetcs/Trees/Tree0.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/0Tree.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/2Tree.tscn" type="PackedScene" id=19]
 
 [node name="Fase" type="Node2D"]
 
@@ -52,6 +55,12 @@ tile_data = PoolIntArray( -131085, 113, 0, -131084, 113, 0, -131083, 113, 0, -13
 scale = Vector2( 2, 2 )
 tile_data = PoolIntArray( -131086, 81, 0, -196595, 85, 0, -65550, 86, 0, -131059, 90, 0, -14, 86, 0, -65523, 90, 0, 65522, 86, 0, 13, 90, 0, 131058, 86, 0, 65549, 90, 0, 65557, 73, 0, 196594, 86, 0, 131085, 90, 0, 131093, 73, 0, 262130, 86, 0, 196621, 90, 0, 196629, 73, 0, 327666, 86, 0, 262157, 90, 0, 262165, 73, 0, 393202, 86, 0, 327693, 90, 0, 327701, 73, 0, 458738, 86, 0, 393229, 90, 0, 393237, 73, 0, 524274, 86, 0, 458765, 90, 0, 458773, 73, 0, 589810, 86, 0, 524301, 90, 0, 524309, 73, 0, 655346, 86, 0, 589837, 90, 0, 589845, 73, 0, 720882, 86, 0, 655373, 90, 0, 655381, 73, 0, 786418, 86, 0, 720909, 90, 0, 720917, 73, 0, 851954, 86, 0, 786445, 90, 0, 786453, 73, 0, 917490, 86, 0, 851981, 90, 0, 851989, 73, 0, 983026, 86, 0, 917517, 90, 0, 917525, 73, 0, 1048562, 86, 0, 983053, 90, 0, 983061, 73, 0, 1114098, 86, 0, 1048589, 90, 0, 1048597, 73, 0, 1179634, 86, 0, 1114125, 90, 0, 1114133, 73, 0, 1245170, 86, 0, 1179661, 90, 0, 1179669, 73, 0, 1310706, 86, 0, 1245197, 90, 0, 1245205, 73, 0, 1376242, 86, 0, 1310733, 90, 0, 1310741, 73, 0, 1441778, 86, 0, 1376269, 90, 0, 1376277, 73, 0, 1507314, 86, 0, 1441805, 90, 0, 1441813, 73, 0, 1507349, 73, 0, 1572885, 73, 0, 1638421, 73, 0 )
 
+[node name="Floresta" parent="Elements/Floor" instance=ExtResource( 16 )]
+scale = Vector2( 2, 2 )
+cell_size = Vector2( 8, 8 )
+centered_textures = true
+tile_data = PoolIntArray( -2490407, 1, 0, -2293782, 1, 0, -2162776, 1, 0, -2162740, 0, 0, -2228224, 0, 0, -2097226, 0, 0, -2097183, 0, 0, -2097163, 0, 0, -2162681, 3, 0, -2097135, 0, 0, -2097114, 0, 0, -2031588, 3, 0, -2031564, 0, 0, -2031553, 0, 0, -2031533, 0, 0, -1703992, 0, 0, -1638466, 1, 0, -1638438, 1, 0, -1638421, 0, 0, -1638407, 1, 0, -1572948, 3, 0, -1507376, 1, 0, -1507360, 3, 0, -1441805, 3, 0, -1376299, 0, 0, -1376281, 1, 0, -1441780, 1, 0, -1441763, 0, 0, -1441737, 0, 0, -1441736, 0, 0, -1310794, 1, 0, -1310755, 1, 0, -1310736, 1, 0, -1310724, 0, 0, -1376250, 3, 0, -1376235, 3, 0, -1376215, 1, 0, -1376209, 3, 0, -1376165, 1, 0, -1310686, 3, 0, -1179738, 0, 0, -1245106, 3, 0, -1114170, 3, 0, -1114169, 3, 0, -917587, 3, 0, -851911, 0, 0, -524354, 0, 0, -524349, 3, 0, -589737, 0, 0, -327772, 3, 0, -81, 0, 0, -72, 1, 0, -65474, 1, 0, 131007, 3, 0, 131015, 3, 0, 131152, 3, 0, 655272, 1, 0, 655282, 3, 0, 720838, 3, 0, 852032, 0, 0, 852053, 1, 0, 1048511, 0, 0, 1310644, 1, 0, 1310777, 3, 0, 1376336, 3, 0, 1572794, 3, 0, 1834948, 3, 0, 1769563, 0, 0, 1835073, 1, 0, 2031531, 0, 0, 2293682, 3, 0, 2490299, 0, 0, 2490453, 1, 0, 2817986, 1, 0, 2949035, 1, 0, 3014580, 3, 0, 2949177, 1, 0, 3080135, 3, 0, 3080136, 3, 0, 3211197, 3, 0, 3211354, 3, 0, 3211355, 3, 0, 3801006, 3, 0, 3735636, 0, 0, 3866553, 1, 0, 3866557, 3, 0, 3866563, 3, 0, 3801146, 3, 0, 3932084, 3, 0, 3932104, 3, 0, 3997607, 0, 0, 4653142, 1, 0, 4784067, 0, 0, 4849572, 1, 0, 4849583, 1, 0, 4849593, 3, 0, 4784191, 0, 0, 5373893, 1, 0, 5308499, 3, 0, 5439414, 1, 0, 5439547, 3, 0, 5898156, 0, 0, 6160319, 1, 0, 6160467, 0, 0, 6357050, 1, 0, 6487987, 3, 0, 6815831, 3, 0, 7471074, 1, 0, 7667626, 0, 0, 7667642, 1, 0, 7602214, 0, 0, 7733205, 0, 0, 7667770, 1, 0, 7733332, 0, 0, 7929799, 1, 0, 7864349, 3, 0, 8060992, 3, 0, 8126509, 3, 0 )
+
 [node name="YSort" type="YSort" parent="Elements"]
 
 [node name="Statue" parent="Elements/YSort" instance=ExtResource( 4 )]
@@ -67,6 +76,34 @@ scale = Vector2( 2.5, 2.5 )
 
 [node name="Tree0" parent="Elements/YSort" instance=ExtResource( 18 )]
 position = Vector2( 196, 1332 )
+scale = Vector2( 2, 2 )
+
+[node name="1Tree" parent="Elements/YSort" instance=ExtResource( 15 )]
+position = Vector2( 308, 1702 )
+scale = Vector2( 2, 2 )
+
+[node name="2Tree" parent="Elements/YSort" instance=ExtResource( 19 )]
+position = Vector2( -405, 978 )
+scale = Vector2( 2, 2 )
+
+[node name="0Tree" parent="Elements/YSort" instance=ExtResource( 18 )]
+position = Vector2( 560, 100 )
+scale = Vector2( 2, 2 )
+
+[node name="1Tree2" parent="Elements/YSort" instance=ExtResource( 15 )]
+position = Vector2( -706, 94 )
+scale = Vector2( 2, 2 )
+
+[node name="2Tree2" parent="Elements/YSort" instance=ExtResource( 19 )]
+position = Vector2( -769, 720 )
+scale = Vector2( 2, 2 )
+
+[node name="2Tree3" parent="Elements/YSort" instance=ExtResource( 19 )]
+position = Vector2( -580, 1702 )
+scale = Vector2( 2, 2 )
+
+[node name="1Tree3" parent="Elements/YSort" instance=ExtResource( 15 )]
+position = Vector2( 787, 471 )
 scale = Vector2( 2, 2 )
 
 [node name="FireFlies" type="Node2D" parent="Elements/YSort"]

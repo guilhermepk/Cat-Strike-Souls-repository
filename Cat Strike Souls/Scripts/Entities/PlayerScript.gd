@@ -22,6 +22,8 @@ var attacking = false
 
 var currentScene
 
+onready var rectAnim = get_node('Camera2D/AnimationPlayer/Node2D/ColorRect')
+
 func resetScene():
 	get_tree().change_scene("res://Scenes/Fase.tscn")
 
@@ -36,7 +38,7 @@ func attack():
 	attacking = false
 
 func _ready():
-	$Camera2D/AnimationPlayer/ColorRect.visible = false
+	rectAnim.visible = false
 	$AnimatedSprite.play("idle")
 	currentScene = get_tree().current_scene.name
 	
@@ -119,9 +121,9 @@ func _process(delta):
 			$AnimatedSprite.play('die')
 			if $AnimatedSprite.frame == 6:
 				$AnimatedSprite.playing = false
-			$Camera2D/AnimationPlayer/ColorRect.rect_position.x = position.x-640
-			$Camera2D/AnimationPlayer/ColorRect.rect_position.y = position.y-360
-			$Camera2D/AnimationPlayer/ColorRect.visible = true
+			rectAnim.rect_position.x = position.x-640
+			rectAnim.rect_position.y = position.y-360
+			rectAnim.visible = true
 			$Camera2D/AnimationPlayer.play("fade")
 			yield(get_tree().create_timer(3.0), "timeout")
 			print('jogador morreu')
