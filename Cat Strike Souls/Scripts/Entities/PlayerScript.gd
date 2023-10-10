@@ -36,6 +36,7 @@ func attack():
 	attacking = false
 
 func _ready():
+	$Camera2D/AnimationPlayer/ColorRect.visible = false
 	$AnimatedSprite.play("idle")
 	currentScene = get_tree().current_scene.name
 	
