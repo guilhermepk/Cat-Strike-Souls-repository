@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/mago1.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Scenes/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Entities/Objetcs/Candle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Entities/Objetcs/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/Tree1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/Tree0.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Entities/Objetcs/Trees/Tree2.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -71,6 +74,20 @@ position = Vector2( 604, 313.333 )
 
 [node name="Candle7" parent="Background/Objects/Scenario/Candles" instance=ExtResource( 6 )]
 position = Vector2( 678.667, 312 )
+
+[node name="Plants" type="Node2D" parent="Background/Objects/Scenario"]
+
+[node name="Tree0" parent="Background/Objects/Scenario/Plants" instance=ExtResource( 9 )]
+position = Vector2( 776.667, 452.667 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Tree1" parent="Background/Objects/Scenario/Plants" instance=ExtResource( 8 )]
+position = Vector2( 734.667, 169.333 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Tree2" parent="Background/Objects/Scenario/Plants" instance=ExtResource( 10 )]
+position = Vector2( 72, 190 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Player" parent="Background/Objects" instance=ExtResource( 4 )]
 position = Vector2( 77, 430 )

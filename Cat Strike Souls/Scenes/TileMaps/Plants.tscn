@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Sprites/Pixel Art Top Down - Basic/Texture/TX Plant.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 60, 140, 50, 140, 50, 128, 60, 128 )
+points = PoolVector2Array( 60.14, 138.92, 51.23, 138.92, 51.23, 130.55, 60.14, 130.55 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 52.156, 135.028, 43.192, 135.028, 43.192, 126.928, 52.156, 126.928 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 48.352, 121.948, 39.928, 121.948, 39.928, 113.632, 48.352, 113.632 )
 
 [sub_resource type="TileSet" id=1]
 0/name = "TX Plant.png 0"
@@ -37,9 +43,16 @@ points = PoolVector2Array( 60, 140, 50, 140, 50, 128, 60, 128 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
 1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 2/name = "TX Plant.png 2"
 2/texture = ExtResource( 1 )
@@ -65,9 +78,16 @@ points = PoolVector2Array( 60, 140, 50, 140, 50, 128, 60, 128 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 4 )
 3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 3/z_index = 0
 4/name = "TX Plant.png 4"
 4/texture = ExtResource( 1 )
