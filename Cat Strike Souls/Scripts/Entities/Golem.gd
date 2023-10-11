@@ -32,7 +32,9 @@ func _ready():
 
 func _process(delta):
 	if statue.broken:
+		player.get_node('HUD/Warning').visible = false
 		alive = false
+		player.victory = true
 	
 	if alive:
 		if motion.x > limit_spd:
