@@ -87,7 +87,7 @@ position = Vector2( -405, 978 )
 scale = Vector2( 2, 2 )
 
 [node name="0Tree" parent="Elements/YSort" instance=ExtResource( 18 )]
-position = Vector2( 560, 100 )
+position = Vector2( 416, 211 )
 scale = Vector2( 2, 2 )
 
 [node name="1Tree2" parent="Elements/YSort" instance=ExtResource( 15 )]
@@ -193,27 +193,27 @@ position = Vector2( 215, 417 )
 position = Vector2( 129, 337 )
 
 [node name="Caixa" parent="Elements/YSort" instance=ExtResource( 5 )]
-position = Vector2( 600, 1352 )
+position = Vector2( 196, 1361 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Caixa4" parent="Elements/YSort" instance=ExtResource( 5 )]
-position = Vector2( -565, 69 )
+position = Vector2( -668, 94 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Caixa3" parent="Elements/YSort" instance=ExtResource( 5 )]
-position = Vector2( 624, 80 )
+position = Vector2( 460, 211 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Caixa6" parent="Elements/YSort" instance=ExtResource( 5 )]
-position = Vector2( -608.001, 640.001 )
+position = Vector2( -344, 441 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Caixa5" parent="Elements/YSort" instance=ExtResource( 5 )]
-position = Vector2( 584, 671.999 )
+position = Vector2( 793, 645 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Caixa2" parent="Elements/YSort" instance=ExtResource( 5 )]
-position = Vector2( -615.999, 1400 )
+position = Vector2( -580, 1115 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Candle" parent="Elements/YSort" instance=ExtResource( 13 )]
@@ -281,7 +281,7 @@ position = Vector2( -297, 652 )
 scale = Vector2( 2, 2 )
 
 [node name="Candle4" parent="Elements/YSort/BrokenColumn2" instance=ExtResource( 13 )]
-position = Vector2( 0, -22.5 )
+position = Vector2( -0.5, -23.5 )
 
 [node name="Column" parent="Elements/YSort" instance=ExtResource( 14 )]
 position = Vector2( 308, 667 )

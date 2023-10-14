@@ -4,10 +4,11 @@
 [ext_resource path="res://Assets/Fonts/mago1.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 35
+size = 64
 font_data = ExtResource( 2 )
 
 [node name="MenuButton" type="Button"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -33.0

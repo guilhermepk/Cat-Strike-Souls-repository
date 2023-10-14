@@ -12,11 +12,11 @@
 [ext_resource path="res://Scenes/Entities/Objetcs/Trees/2Tree.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-size = 50
+size = 64
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 35
+size = 48
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -96,10 +96,10 @@ scale = Vector2( 1.5, 1.5 )
 [node name="Options" type="Node2D" parent="."]
 
 [node name="BlackCanva" type="ColorRect" parent="Options"]
-margin_left = 498.0
+margin_left = 491.0
 margin_top = 48.0
-margin_right = 789.0
-margin_bottom = 212.0
+margin_right = 826.0
+margin_bottom = 246.0
 hint_tooltip = "
 
 "
@@ -115,28 +115,28 @@ margin_bottom = 169.0
 alignment = 1
 
 [node name="Title" type="Label" parent="Options/MainContainer"]
-margin_right = 288.0
-margin_bottom = 41.0
+margin_right = 328.0
+margin_bottom = 51.0
 custom_fonts/font = SubResource( 1 )
 text = "Cat Strike Souls"
 align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Options/MainContainer"]
-margin_top = 45.0
-margin_right = 288.0
-margin_bottom = 119.0
+margin_top = 55.0
+margin_right = 328.0
+margin_bottom = 195.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Options/MainContainer/HBoxContainer"]
 margin_left = 86.0
-margin_right = 202.0
-margin_bottom = 74.0
+margin_right = 242.0
+margin_bottom = 140.0
 alignment = 1
 
 [node name="Play" type="Button" parent="Options/MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
-margin_right = 116.0
-margin_bottom = 35.0
+margin_right = 156.0
+margin_bottom = 44.0
 focus_mode = 0
 custom_constants/hseparation = 20
 custom_fonts/font = SubResource( 4 )
@@ -145,9 +145,9 @@ text = "Jogar"
 flat = true
 
 [node name="Controls" type="Button" parent="Options/MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
-margin_top = 39.0
-margin_right = 116.0
-margin_bottom = 74.0
+margin_top = 48.0
+margin_right = 156.0
+margin_bottom = 92.0
 focus_mode = 0
 custom_constants/hseparation = 20
 custom_fonts/font = SubResource( 4 )
@@ -156,7 +156,9 @@ text = "Controles"
 flat = true
 
 [node name="QuitButton" parent="Options/MainContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-position = Vector2( 59, 96 )
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 140.0
 
 [node name="ColorRect2" type="ColorRect" parent="Options"]
 margin_left = 623.0

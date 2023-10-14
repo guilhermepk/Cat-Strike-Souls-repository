@@ -1,15 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/TileMaps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/Personagens/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Entities/Objetcs/Candle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Entities/Objetcs/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Entities/DoorTunnelToArena.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Entities/Objetcs/Box.tscn" type="PackedScene" id=6]
 
 [node name="StartHall" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2( -303, 397 )
 scale = Vector2( 2, 2 )
 color = Color( 0.105882, 0.14902, 0.207843, 1 )
 
@@ -58,6 +58,10 @@ tile_data = PoolIntArray( 983059, 175, 0, 983060, 175, 1, 1048595, 175, 65536, 1
 
 [node name="Player" parent="Elements/YSort" instance=ExtResource( 2 )]
 position = Vector2( -28, 12 )
+scale = Vector2( 2.5, 2.5 )
+
+[node name="Box" parent="Elements/YSort" instance=ExtResource( 6 )]
+position = Vector2( 495, 448 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Candle4" parent="Elements/YSort" instance=ExtResource( 3 )]

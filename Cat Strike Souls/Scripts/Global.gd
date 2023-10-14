@@ -1,3 +1,3 @@
 extends Node
 
-var paused = false
+var victory = false
