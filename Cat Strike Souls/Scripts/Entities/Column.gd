@@ -9,6 +9,7 @@ var reversedSymbols = []
 var maxEnergy = 0.6
 var currentSymbolIndex = 0
 var fullyCharged = false
+var charging = false
 
 func charge():
 	var currentSymbol = reversedSymbols[currentSymbolIndex]
@@ -37,13 +38,17 @@ func _ready():
 		symbol.scale.y = 1
 	
 func _process(delta):
-	
 	if fullyCharged:
 		$AnimationPlayer.play("charged")
 	elif playerAround:
 		if currentSymbolIndex < symbols.size():
 			if Input.is_key_pressed(88): # 88 = x
+				if !charging:
+					$FxActivateSymbol.play()
+				charging = true
 				charge()
+			else:
+				charging = false
 		else:
 			XKey.visible = false
 			fullyCharged = true
