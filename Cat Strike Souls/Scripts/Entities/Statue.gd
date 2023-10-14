@@ -50,4 +50,3 @@ func breakStatue():
 	breaking = false
 	broken = true
 	activated = false
-	print('player venceu')

@@ -18,27 +18,15 @@ var leftPressed = false
 var inBox = false
 var alive = true
 
-var attacking = false
-
 var currentScene
 
 var victory = false
 
+var paused = Global.paused
+
+
 onready var rectAnim = get_node('Camera2D/AnimationPlayer/Node2D/ColorRect')
 onready var victoryLabel = get_node('Camera2D/AnimationPlayer/Node2D/VictoryLabel')
-
-func resetScene():
-	get_tree().change_scene("res://Scenes/Fase.tscn")
-
-func attack():
-	$AnimatedSprite.play("attack")
-	var cur_anim = $AnimatedSprite.animation
-	var anim_spd = $AnimatedSprite.frames.get_animation_speed(cur_anim)
-	var anim_frames = $AnimatedSprite.frames.get_frame_count(cur_anim)
-	var attackTime = anim_frames / anim_spd
-	
-	yield(get_tree().create_timer(attackTime), "timeout")
-	attacking = false
 
 func _ready():
 	rectAnim.visible = false
@@ -60,7 +48,12 @@ func _process(delta):
 	upPressed = true if (Input.is_action_pressed("ui_up")) else false
 	downPressed = true if (Input.is_action_pressed("ui_down")) else false
 	
-	if currentScene in movementScenes:
+	if paused:
+		$AnimatedSprite.playing = false
+	else:
+		$AnimatedSprite.playing = true
+	
+	if currentScene in movementScenes and !paused:
 		if !victory:
 			$Camera2D.current = true
 			if motion.x > limit_spd:
@@ -74,40 +67,33 @@ func _process(delta):
 				motion.y = -limit_spd
 				
 			if alive:
+				if Input.is_action_just_pressed("ui_cancel"):
+					paused = true
+					get_tree().paused = true
 				if !inBox:
-					if !attacking:
-						if Input.is_key_pressed(67): # 67 = c
-							attacking = true
-							attack()
-							
-						##Movimentação
-						if rightPressed:
-							motion.x += spd
-							$AnimatedSprite.flip_h = false
-						elif leftPressed:
-							motion.x -= spd
-							$AnimatedSprite.flip_h = true
-						else:
-							if motion.x > 0:
-								motion.x -= desac
-							elif motion.x < 0:
-								motion.x += desac
-						
-						if upPressed:
-							motion.y -= spd
-						elif downPressed:
-							motion.y += spd
-						else:
-							if motion.y > 0:
-								motion.y -= desac
-							elif motion.y < 0:
-								motion.y += desac
-							
-					if attacking:
-						motion.x = 0
-						motion.y = 0
-						$AnimatedSprite.play("attack")
-					elif motion.x != 0 or motion.y != 0:
+					##Movimentação
+					if rightPressed:
+						motion.x += spd
+						$AnimatedSprite.flip_h = false
+					elif leftPressed:
+						motion.x -= spd
+						$AnimatedSprite.flip_h = true
+					else:
+						if motion.x > 0:
+							motion.x -= desac
+						elif motion.x < 0:
+							motion.x += desac
+					
+					if upPressed:
+						motion.y -= spd
+					elif downPressed:
+						motion.y += spd
+					else:
+						if motion.y > 0:
+							motion.y -= desac
+						elif motion.y < 0:
+							motion.y += desac
+					if motion.x != 0 or motion.y != 0:
 						$AnimatedSprite.play("run")
 					else:
 						$AnimatedSprite.play("idle")
@@ -139,18 +125,22 @@ func _process(delta):
 			$AnimatedSprite.play('idle')
 			fadeVictory()
 			yield(get_tree().create_timer(5.0), "timeout")
-			get_tree().current_scene.get_node('CanvasModulate').visible = false
-			rectAnim.visible = true
-			rectAnim.color.a = 1
-			victoryLabel.visible = true
-			victoryLabel.modulate.a = 1
-			
-	else:
+			get_tree().change_scene("res://Scenes/VictoryScreen.tscn")
+	elif !currentScene in movementScenes:
 		motion.x = 0
 		motion.y = 0
 		$Camera2D.current = false
+	else:
+		motion.x = 0
+		motion.y = 0
+		if Input.is_action_just_pressed("ui_cancel"):
+			paused = false
+			get_tree().paused = false
 		
 	move_and_slide(motion)
+
+func resetScene():
+	get_tree().change_scene("res://Scenes/Fase.tscn")
 
 func fadeVictory():
 	rectAnim.rect_position.x = position.x-640

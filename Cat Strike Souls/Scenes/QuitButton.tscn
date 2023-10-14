@@ -8,6 +8,7 @@ size = 35
 font_data = ExtResource( 1 )
 
 [node name="QuitButton" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="Quit" type="Button" parent="." groups=["button"]]

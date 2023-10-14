@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/mago1.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 2 )
+
+[node name="MenuButton" type="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -33.0
+margin_top = -25.0
+margin_right = -1247.0
+margin_bottom = -703.0
+custom_fonts/font = SubResource( 1 )
+text = "Menu"
+flat = true
+script = ExtResource( 1 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_MenuButton_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_MenuButton_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_MenuButton_pressed"]
