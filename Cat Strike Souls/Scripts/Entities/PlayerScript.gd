@@ -20,9 +20,6 @@ var alive = true
 
 var currentScene
 
-var victory = Global.victory
-
-
 onready var rectAnim = get_node('Camera2D/AnimationPlayer/Node2D/ColorRect')
 onready var victoryLabel = get_node('Camera2D/AnimationPlayer/Node2D/VictoryLabel')
 
@@ -45,6 +42,8 @@ func _ready():
 		$HUD.visible = false
 
 func _process(delta):
+	var victory = Global.victory
+	
 	rightPressed = true if (Input.is_action_pressed("ui_right")) else false
 	leftPressed = true if (Input.is_action_pressed("ui_left")) else false
 	upPressed = true if (Input.is_action_pressed("ui_up")) else false

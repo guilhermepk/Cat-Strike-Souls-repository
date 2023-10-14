@@ -16,10 +16,10 @@ color = Color( 0.105882, 0.14902, 0.207843, 1 )
 [node name="FloorGroup" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="FloorGroup"]
-margin_left = -968.0
-margin_top = -976.0
-margin_right = 1962.0
-margin_bottom = 1296.0
+margin_left = -691.0
+margin_top = -408.0
+margin_right = 2118.0
+margin_bottom = 1152.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Floor" parent="FloorGroup" instance=ExtResource( 1 )]
@@ -57,7 +57,7 @@ scale = Vector2( 2, 2 )
 tile_data = PoolIntArray( 983059, 175, 0, 983060, 175, 1, 1048595, 175, 65536, 1048596, 175, 65537, 1114116, 81, 0, 1114117, 178, 0, 1114118, 178, 1, 1114119, 85, 0, 1114131, 175, 131072, 1114132, 175, 131073, 1179653, 178, 65536, 1179654, 178, 65537, 1245189, 178, 131072, 1245190, 178, 131073, 1310738, 95, 0, 1310739, 175, 0, 1310740, 175, 1, 1310741, 95, 0, 1376275, 175, 65536, 1376276, 175, 65537, 1441811, 175, 131072, 1441812, 175, 131073 )
 
 [node name="Player" parent="Elements/YSort" instance=ExtResource( 2 )]
-position = Vector2( -28, 12 )
+position = Vector2( -21, 41 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Box" parent="Elements/YSort" instance=ExtResource( 6 )]
