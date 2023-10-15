@@ -20,11 +20,11 @@ size = 48
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 25
+size = 32
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 25
+size = 32
 font_data = ExtResource( 2 )
 
 [node name="Menu" type="Control"]
@@ -161,10 +161,10 @@ margin_right = 156.0
 margin_bottom = 140.0
 
 [node name="ColorRect2" type="ColorRect" parent="Options"]
-margin_left = 623.0
-margin_top = 681.0
-margin_right = 729.0
-margin_bottom = 700.0
+margin_left = 619.0
+margin_top = 680.0
+margin_right = 753.0
+margin_bottom = 704.0
 color = Color( 1, 1, 1, 0.0980392 )
 
 [node name="AuthorContainer" type="HBoxContainer" parent="Options"]
@@ -180,17 +180,17 @@ custom_constants/separation = 0
 alignment = 1
 
 [node name="MadeBy" type="Label" parent="Options/AuthorContainer"]
-margin_left = 53.0
-margin_top = 10.0
-margin_right = 125.0
-margin_bottom = 31.0
+margin_left = 27.0
+margin_top = 7.0
+margin_right = 121.0
+margin_bottom = 33.0
 custom_fonts/font = SubResource( 2 )
 text = "Feito por"
 
 [node name="Developer" type="Button" parent="Options/AuthorContainer" groups=["button"]]
 modulate = Color( 0.361546, 0.369141, 0.141312, 1 )
-margin_left = 125.0
-margin_right = 235.0
+margin_left = 121.0
+margin_right = 261.0
 margin_bottom = 41.0
 hint_tooltip = "Clique aqui para ir ao meu GitHub!"
 focus_mode = 0
