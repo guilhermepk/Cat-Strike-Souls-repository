@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/light.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Pixel Art Top Down - Basic/Texture/TX Props.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Entities/Column.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Sounds/SoundEffects/Arcane Activations Preview/Activate Plinth 03.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Sounds/SoundEffects/Arcane Activations Preview/Activate Glyph Forcefield.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/SoundEffects/ShapeFormsLibrary/Arcane Activations Preview/Activate Plinth 03.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sounds/SoundEffects/ShapeFormsLibrary/Arcane Activations Preview/Activate Glyph Forcefield.wav" type="AudioStream" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BLLTImpt_Hit Marker_07.wav-748df45ad41c0758b8af41ff83d4422a.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SoundEffects/ShapeFormsLibrary/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/BLLTImpt_Hit Marker_07.wav"
+dest_files=[ "res://.import/BLLTImpt_Hit Marker_07.wav-748df45ad41c0758b8af41ff83d4422a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

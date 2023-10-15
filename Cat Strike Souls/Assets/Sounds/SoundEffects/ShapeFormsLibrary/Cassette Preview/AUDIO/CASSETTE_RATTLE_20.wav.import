@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CASSETTE_RATTLE_20.wav-92390570c2b8e26971d8b932e4258c9f.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SoundEffects/ShapeFormsLibrary/Cassette Preview/AUDIO/CASSETTE_RATTLE_20.wav"
+dest_files=[ "res://.import/CASSETTE_RATTLE_20.wav-92390570c2b8e26971d8b932e4258c9f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
