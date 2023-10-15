@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GRASS - Walk 5.wav-ab5c7b6585d6d8f50236431f90898b58.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SoundEffects/NA_Character Footsteps (Dirt & Grass) - Pack 1/Walk/Grass/GRASS - Walk 5.wav"
+dest_files=[ "res://.import/GRASS - Walk 5.wav-ab5c7b6585d6d8f50236431f90898b58.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

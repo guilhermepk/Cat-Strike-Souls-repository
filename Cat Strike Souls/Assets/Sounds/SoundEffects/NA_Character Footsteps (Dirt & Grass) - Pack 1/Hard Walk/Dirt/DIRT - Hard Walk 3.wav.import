@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DIRT - Hard Walk 3.wav-640fe33634a6c9d118f56c8c8a689b0f.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SoundEffects/NA_Character Footsteps (Dirt & Grass) - Pack 1/Hard Walk/Dirt/DIRT - Hard Walk 3.wav"
+dest_files=[ "res://.import/DIRT - Hard Walk 3.wav-640fe33634a6c9d118f56c8c8a689b0f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

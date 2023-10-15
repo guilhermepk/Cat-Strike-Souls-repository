@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GRASS - Crouch short 3.wav-55f9d6af72331edd9a1790eb25e43625.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SoundEffects/NA_Character Footsteps (Dirt & Grass) - Pack 1/Crouch/Grass/GRASS - Crouch short 3.wav"
+dest_files=[ "res://.import/GRASS - Crouch short 3.wav-55f9d6af72331edd9a1790eb25e43625.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
