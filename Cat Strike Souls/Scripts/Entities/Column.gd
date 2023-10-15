@@ -9,6 +9,10 @@ var reversedSymbols = []
 var maxEnergy = 0.6
 var currentSymbolIndex = 0
 var fullyCharged = false
+var charging = false
+
+onready var fxCharging = get_node("FX/FxCharging")
+onready var fxActivated = get_node("FX/FxActivated")
 
 func charge():
 	var currentSymbol = reversedSymbols[currentSymbolIndex]
@@ -19,13 +23,12 @@ func charge():
 		var energyPercent = (currentEnergy * 100) / maxEnergy
 		var currentAlpha = (1 * energyPercent) / 100
 		currentSymbol.modulate.a = currentAlpha
-		
 	else:
-		$Fx.pitch_scale = $Fx.pitch_scale + currentSymbolIndex/10
-		$Fx.play()
 		currentSymbolIndex += 1
 		
 func _ready():
+	fxCharging.volume_db = -80
+	
 	player = get_tree().current_scene.get_node('Elements/YSort/Player')
 	XKey = player.get_node('HUD/XKey')
 	
@@ -42,20 +45,30 @@ func _process(delta):
 	if fullyCharged:
 		$AnimationPlayer.play("charged")
 	elif playerAround:
+		print(fxCharging.volume_db)
 		if currentSymbolIndex < symbols.size():
 			if Input.is_key_pressed(88): # 88 = x
+				if fxCharging.volume_db < -10:
+					fxCharging.volume_db += 10
+				if !charging:
+					fxCharging.play()
+					charging = true
 				charge()
 		else:
 			XKey.visible = false
 			fullyCharged = true
-		
+			fxActivated.play()
+			
+	if !playerAround or !Input.is_key_pressed(88):
+		charging = false
+		if fxCharging.volume_db > -80:
+			fxCharging.volume_db -= 0.25
 				
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
 		playerAround = true
 		if !fullyCharged:
 			XKey.visible = true
-		
 
 func _on_Area2D_body_exited(body):
 	if body.name == 'Player':
