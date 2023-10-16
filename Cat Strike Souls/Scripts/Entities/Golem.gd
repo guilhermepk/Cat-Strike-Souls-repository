@@ -22,6 +22,8 @@ var wakingUp = false
 var stunned = false
 var alive = true
 
+var themeStarted = false
+
 func _ready():
 	rng.randomize()
 	$AnimatedSprite.play("wake_up")
@@ -108,6 +110,8 @@ func stun_golem(stunTime):
 	stunned = false
 
 func wakeUp():
+	if !themeStarted:
+		$MusicTheme.play()
 	$AnimatedSprite.play("wake_up")
 	var cur_anim = $AnimatedSprite.animation
 	var anim_spd = $AnimatedSprite.frames.get_animation_speed(cur_anim)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/TileMaps/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/Personagens/Player.tscn" type="PackedScene" id=2]
@@ -19,13 +19,20 @@
 [ext_resource path="res://Scenes/Entities/Personagens/FireFly.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Entities/Objetcs/Trees/0Tree.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Entities/Objetcs/Trees/2Tree.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scripts/Fase.gd" type="Script" id=20]
+[ext_resource path="res://Assets/Sounds/SoundEffects/wind woosh loop.ogg" type="AudioStream" id=21]
 
 [node name="Fase" type="Node2D"]
+script = ExtResource( 20 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -304, 397 )
 scale = Vector2( 2, 2 )
 color = Color( 0.294118, 0.454902, 0.627451, 1 )
+
+[node name="FxWind" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 21 )
+volume_db = 10.0
 
 [node name="Elements" type="Node2D" parent="."]
 

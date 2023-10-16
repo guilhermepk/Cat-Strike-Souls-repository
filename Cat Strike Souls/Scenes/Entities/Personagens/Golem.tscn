@@ -1,8 +1,9 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Assets/Sprites/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Entities/Golem.gd" type="Script" id=2]
 [ext_resource path="res://Assets/light.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/Sounds/Musics/Short Theme.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 1 )
@@ -454,6 +455,9 @@ energy = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 82 )
 anims/shineAttack = SubResource( 83 )
+
+[node name="MusicTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="body_entered" from="GolemArea2D" to="." method="_on_GolemArea2D_body_entered"]
 [connection signal="body_entered" from="Influence" to="." method="_on_Influence_body_entered"]

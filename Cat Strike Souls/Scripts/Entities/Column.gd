@@ -45,7 +45,6 @@ func _process(delta):
 	if fullyCharged:
 		$AnimationPlayer.play("charged")
 	elif playerAround:
-		print(fxCharging.volume_db)
 		if currentSymbolIndex < symbols.size():
 			if Input.is_key_pressed(88): # 88 = x
 				if fxCharging.volume_db < -10:
