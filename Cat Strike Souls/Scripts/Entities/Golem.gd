@@ -8,7 +8,7 @@ var desac = 5
 var rng = RandomNumberGenerator.new()
 
 var follow
-var player
+onready var player = get_tree().current_scene.get_node('Elements/YSort/Player')
 
 var statue
 
@@ -24,6 +24,9 @@ var alive = true
 
 var themeStarted = false
 
+func fadeTheme():
+	$MusicTheme.volume_db -= 0.1
+
 func _ready():
 	rng.randomize()
 	$AnimatedSprite.play("wake_up")
@@ -33,11 +36,16 @@ func _ready():
 	statue = get_tree().current_scene.get_node('Elements/YSort/Statue')
 
 func _process(delta):
+	print($MusicTheme.volume_db)
 	if statue.broken:
+		fadeTheme()
 		player.get_node('HUD/Warning').visible = false
 		alive = false
 		Global.victory = true
-	
+		
+	if !player.alive:
+		fadeTheme()
+		
 	if alive:
 		if motion.x > limit_spd:
 			motion.x = limit_spd
@@ -172,7 +180,6 @@ func _on_GolemArea2D_body_entered(body):
 func _on_Influence_body_entered(body):
 	if body.name == 'Player':
 		#print('Player entrou na área de influência')
-		player = body
 		#print(player)
 		follow = true
 		playerInInfluence = true
