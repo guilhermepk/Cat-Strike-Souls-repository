@@ -8,9 +8,12 @@ var desac = 5
 var rng = RandomNumberGenerator.new()
 
 var follow
-onready var player = get_tree().current_scene.get_node('Elements/YSort/Player')
 
-var statue
+onready var player = get_tree().current_scene.get_node('Elements/YSort/Player')
+onready var statue = get_tree().current_scene.get_node('Elements/YSort/Statue')
+
+var statueInArm = false
+var statueNearby = false
 
 var playerInInfluence = false
 var playerNearby = false
@@ -38,8 +41,6 @@ func _ready():
 	$AnimatedSprite.play("wake_up")
 	$AnimatedSprite.playing = false
 	$AnimatedSprite.frame = 0
-	
-	statue = get_tree().current_scene.get_node('Elements/YSort/Statue')
 
 func _process(delta):
 	if currentScene in movementScenes:
@@ -47,7 +48,8 @@ func _process(delta):
 			fadeTheme()
 			player.get_node('HUD/Warning').visible = false
 			alive = false
-			Global.victory = true
+			if player.alive:
+				Global.victory = true
 			
 		if !player.alive:
 			fadeTheme()
@@ -69,17 +71,21 @@ func _process(delta):
 				motion.x = 0
 				motion.y = 0
 				
-			if playerInArm and $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 7:
-				player.alive = false
-			
-			
+			if $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 7:
+				if playerInArm:
+					player.alive = false
+				if statue.activated and statueInArm:
+					statue.breaking = true
+					
 			if $AnimationPlayer.current_animation == 'shineAttack':
 				var animationTime = $AnimationPlayer.current_animation_position
 				if animationTime >= 1.25 and animationTime <= 1.75:
 					if playerNearby and !player.inBox:
 						player.alive = false
+					if statue.activated and statueNearby:
+						statue.breaking = true
+						
 					stun_golem(1)
-					player.get_node('HUD/Warning').visible = false
 			
 			if sleeping and playerInInfluence:
 				wakingUp = true
@@ -122,6 +128,7 @@ func stun_golem(stunTime):
 	stunned = true
 	yield(get_tree().create_timer(stunTime), "timeout")
 	stunned = false
+	player.get_node('HUD/Warning').visible = false
 
 func wakeUp():
 	if !themeStarted:
@@ -176,12 +183,7 @@ func followPlayer(player):
 		playerTooNear = false
 
 func _on_GolemArea2D_body_entered(body):
-	if body.name == 'Statue':
-#		print('golem encostou na estátua')
-#		print('golem: x ', position.x, ' y ', position.y)
-#		print('statue: x ', statue.position.x, ' y ', statue.position.y)
-		if body.activated:
-			body.breaking = true
+	pass
 
 func _on_Influence_body_entered(body):
 	if body.name == 'Player':
@@ -198,21 +200,26 @@ func _on_Influence_body_exited(body):
 
 func _on_InfluenceNearby_body_entered(body):
 	if body.name == 'Player':
-		#print('Player entrou na área próxima')
 		playerNearby = true
+	if body.name == 'Statue':
+		statueNearby = true
 
 func _on_InfluenceNearby_body_exited(body):
 	if body.name == 'Player':
-		#print('Player saiu da área próxima')
 		playerNearby = false
 		if !wakingUp:
 			$AnimatedSprite.play('idle')
+	if body.name == 'Statue':
+		statueNearby = false
 
 func _on_Arm_body_entered(body):
 	if body.name == 'Player':
 		playerInArm = true
-		player = body
+	if body.name == 'Statue':
+		statueInArm = true
 
 func _on_Arm_body_exited(body):
 	if body.name == 'Player':
 		playerInArm = false
+	if body.name == 'Statue':
+		statueInArm = false

@@ -7,11 +7,15 @@ onready var bgDialog = get_node("DialogBoxBG")
 var spaceAlreadyPressed = false
 
 var msg_queue = [
-	'é o fodase-man?'
+	'dia preguiçoso mas muito produtivo',
+	'não ta morto quem peleia',
+	'senza fretta ma senza sosta'
 ]
 
 func _ready():
-	bgDialog.hide()
+	bgDialog.show()
+	timer.stop()
+	showMessage()
 	
 func _input(event):
 	if event is InputEventKey:
@@ -19,13 +23,14 @@ func _input(event):
 			if event.is_pressed():
 				if !spaceAlreadyPressed:
 					spaceAlreadyPressed = true
-					bgDialog.show()
 					showMessage()
 			else:
 				spaceAlreadyPressed = false
 
 func showMessage():
 	if not timer.is_stopped():
+		print('apertou antes de terminar o timer')
+		print(timer)
 		text.visible_characters = text.bbcode_text.length()
 		return
 	

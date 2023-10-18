@@ -119,6 +119,7 @@ func _process(delta):
 			$AnimatedSprite.play('idle')
 			fadeVictory()
 			yield(get_tree().create_timer(5.0), "timeout")
+			Global.victory = false
 			get_tree().change_scene("res://Scenes/VictoryScreen.tscn")
 	elif !currentScene in movementScenes:
 		motion.x = 0

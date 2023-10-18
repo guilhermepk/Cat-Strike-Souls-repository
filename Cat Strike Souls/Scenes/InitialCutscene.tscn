@@ -68,7 +68,6 @@ margin_right = 1170.0
 margin_bottom = 140.0
 size_flags_vertical = 0
 custom_fonts/normal_font = SubResource( 1 )
-text = "por que raios isso ta bugando????????????? não sei o porquê"
 scroll_active = false
 
 [node name="Timer" type="Timer" parent="InitialCutsceneContainer"]
@@ -86,6 +85,7 @@ text = "Pular (Enter)"
 flat = true
 script = ExtResource( 8 )
 
+[connection signal="ready" from="InitialCutsceneContainer/Timer" to="InitialCutsceneContainer" method="_on_Timer_ready"]
 [connection signal="timeout" from="InitialCutsceneContainer/Timer" to="InitialCutsceneContainer" method="_on_Timer_timeout"]
 [connection signal="mouse_entered" from="SkipButton" to="SkipButton" method="_on_SkipButton_mouse_entered"]
 [connection signal="mouse_exited" from="SkipButton" to="SkipButton" method="_on_SkipButton_mouse_exited"]
