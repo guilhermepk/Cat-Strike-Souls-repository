@@ -24,6 +24,12 @@ var alive = true
 
 var themeStarted = false
 
+onready var currentScene = get_tree().current_scene.name
+var movementScenes = [
+	'Fase'
+]
+
+
 func fadeTheme():
 	$MusicTheme.volume_db -= 0.1
 
@@ -36,68 +42,68 @@ func _ready():
 	statue = get_tree().current_scene.get_node('Elements/YSort/Statue')
 
 func _process(delta):
-	print($MusicTheme.volume_db)
-	if statue.broken:
-		fadeTheme()
-		player.get_node('HUD/Warning').visible = false
-		alive = false
-		Global.victory = true
-		
-	if !player.alive:
-		fadeTheme()
-		
-	if alive:
-		if motion.x > limit_spd:
-			motion.x = limit_spd
-		elif motion.x < -limit_spd:
-			motion.x = -limit_spd
+	if currentScene in movementScenes:
+		if statue.broken:
+			fadeTheme()
+			player.get_node('HUD/Warning').visible = false
+			alive = false
+			Global.victory = true
 			
-		if motion.y > limit_spd:
-			motion.y = limit_spd
-		elif motion.y < -limit_spd:
-			motion.y = -limit_spd
-		
-		if follow and !player.inBox and !sleeping and !stunned:
-			followPlayer(player)
-		else:
-			motion.x = 0
-			motion.y = 0
+		if !player.alive:
+			fadeTheme()
 			
-		if playerInArm and $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 7:
-			player.alive = false
-		
-		
-		if $AnimationPlayer.current_animation == 'shineAttack':
-			var animationTime = $AnimationPlayer.current_animation_position
-			if animationTime >= 1.25 and animationTime <= 1.75:
-				if playerNearby and !player.inBox:
-					player.alive = false
-				stun_golem(1)
-				player.get_node('HUD/Warning').visible = false
-		
-		if sleeping and playerInInfluence:
-			wakingUp = true
-		elif !sleeping:
-			if playerTooNear and player.alive:
-				$AnimatedSprite.play("shine")
-				player.get_node('HUD/Warning').visible = true
-				yield(get_tree().create_timer(1), "timeout")
-				$AnimationPlayer.play("shineAttack")
-			elif playerNearby and player.alive:
-				$AnimatedSprite.play("attack")
-	#		elif !playerInInfluence:
-	#			$AnimatedSprite.play("asteroid")
-	#			if $AnimatedSprite.frame == 7 and $AnimatedSprite.animation == 'asteroid':
-	#				$AnimatedSprite.playing = false 
-			else:
-				$AnimatedSprite.play("idle")
+		if alive:
+			if motion.x > limit_spd:
+				motion.x = limit_spd
+			elif motion.x < -limit_spd:
+				motion.x = -limit_spd
 				
-		if wakingUp:
-			wakeUp()
-		
-		move_and_slide(motion)
-	else:
-		die()
+			if motion.y > limit_spd:
+				motion.y = limit_spd
+			elif motion.y < -limit_spd:
+				motion.y = -limit_spd
+			
+			if follow and !player.inBox and !sleeping and !stunned:
+				followPlayer(player)
+			else:
+				motion.x = 0
+				motion.y = 0
+				
+			if playerInArm and $AnimatedSprite.animation == 'attack' and $AnimatedSprite.frame == 7:
+				player.alive = false
+			
+			
+			if $AnimationPlayer.current_animation == 'shineAttack':
+				var animationTime = $AnimationPlayer.current_animation_position
+				if animationTime >= 1.25 and animationTime <= 1.75:
+					if playerNearby and !player.inBox:
+						player.alive = false
+					stun_golem(1)
+					player.get_node('HUD/Warning').visible = false
+			
+			if sleeping and playerInInfluence:
+				wakingUp = true
+			elif !sleeping:
+				if playerTooNear and player.alive:
+					$AnimatedSprite.play("shine")
+					player.get_node('HUD/Warning').visible = true
+					yield(get_tree().create_timer(1), "timeout")
+					$AnimationPlayer.play("shineAttack")
+				elif playerNearby and player.alive:
+					$AnimatedSprite.play("attack")
+		#		elif !playerInInfluence:
+		#			$AnimatedSprite.play("asteroid")
+		#			if $AnimatedSprite.frame == 7 and $AnimatedSprite.animation == 'asteroid':
+		#				$AnimatedSprite.playing = false 
+				else:
+					$AnimatedSprite.play("idle")
+					
+			if wakingUp:
+				wakeUp()
+			
+			move_and_slide(motion)
+		else:
+			die()
 
 func die():
 #	print('golem morrendo')

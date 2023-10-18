@@ -18,7 +18,7 @@ var leftPressed = false
 var inBox = false
 var alive = true
 
-var currentScene
+onready var currentScene = get_tree().current_scene.name
 
 onready var rectAnim = get_node('Camera2D/AnimationPlayer/Node2D/ColorRect')
 onready var victoryLabel = get_node('Camera2D/AnimationPlayer/Node2D/VictoryLabel')
@@ -34,7 +34,6 @@ func _ready():
 	victoryLabel.modulate.a = 0
 	
 	$AnimatedSprite.play("idle")
-	currentScene = get_tree().current_scene.name
 	
 	if currentScene in movementScenes:
 		$HUD.visible = true
