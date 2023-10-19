@@ -100,9 +100,9 @@ func _process(delta):
 					elif Input.is_action_just_pressed('ui_up'):
 						position.y -= 25
 					elif Input.is_action_just_pressed('ui_right'):
-						position.x += 40
+						position.x += 35
 					elif Input.is_action_just_pressed('ui_left'):
-						position.x -= 40
+						position.x -= 25
 			else:
 				motion.x = 0
 				motion.y = 0

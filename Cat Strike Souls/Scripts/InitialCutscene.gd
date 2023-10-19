@@ -1,22 +1,15 @@
 extends AnimationPlayer
 
-onready var golemSprite = get_node("Golem/AnimatedSprite")
-onready var golemSprite2 = get_node("Golem2/AnimatedSprite")
-onready var golemSprite3 = get_node("Golem3/AnimatedSprite")
-
 onready var golemSprites = [
-	golemSprite,
-	golemSprite2,
-	golemSprite3
+	get_node("Characters/Golem/AnimatedSprite"),
+	get_node("Characters/Golem2/AnimatedSprite"),
+	get_node("Characters/Golem3/AnimatedSprite")
 ]
 
 func _ready():
 	for sprite in golemSprites:
 		sprite.flip_h = true
-		
-	golemSprite.play('idle')
-	golemSprite2.play('attack')
-	golemSprite3.play('attack')
+		sprite.play('idle')
 
 func _input(event):
 	if event is InputEventKey:

@@ -14,25 +14,28 @@ func _ready():
 	$AnimatedSprite.play("default")
 	$Light2D.visible = false
 	
-	var sceneChildren = get_tree().current_scene.get_node('Elements/YSort').get_children()
-	for child in sceneChildren:
-		var fileName = child.get_filename()
-		if fileName in columnsScenes:
-			columns.append(child)
+	if get_tree().current_scene.name == 'Fase':
+		var sceneChildren = get_tree().current_scene.get_node('Elements/YSort').get_children()
+		for child in sceneChildren:
+			var fileName = child.get_filename()
+			if fileName in columnsScenes:
+				columns.append(child)
 		
 func _process(delta):
-	var all_columns_on = true
-	for column in columns:
-		if column.fullyCharged == false:
-			all_columns_on = false
-			
-	if all_columns_on:
-		activated = true
+	if get_tree().current_scene.name == 'Fase':
+		var all_columns_on = true
+		for column in columns:
+			if column.fullyCharged == false:
+				all_columns_on = false
+				
+		if all_columns_on:
+			activated = true
 	
 	if broken:
 		$AnimatedSprite.play("breaking")
 		$AnimatedSprite.playing = false
 		$AnimatedSprite.frame = $AnimatedSprite.frames.get_frame_count('breaking')-1
+		$Light2D.visible = false
 	elif breaking:
 		breakStatue()
 	elif activated:

@@ -34,7 +34,7 @@ animation = "empty"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -2.84217e-14, 0 )
 scale = Vector2( 0.9375, 1 )
-polygon = PoolVector2Array( 0, 8, -5.33333, 5, 3.03165e-14, 2, 5.33333, 5 )
+polygon = PoolVector2Array( 0, 8, -4.26667, 5, 3.03165e-14, 2, 2.13333, 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]

@@ -29,8 +29,9 @@ func charge():
 func _ready():
 	fxCharging.volume_db = -80
 	
-	player = get_tree().current_scene.get_node('Elements/YSort/Player')
-	XKey = player.get_node('HUD/XKey')
+	if get_tree().current_scene.name == 'Fase':
+		player = get_tree().current_scene.get_node('Elements/YSort/Player')
+		XKey = player.get_node('HUD/XKey')
 	
 	symbols = $TileMap/LightEffects.get_children()
 	for symbol in symbols:

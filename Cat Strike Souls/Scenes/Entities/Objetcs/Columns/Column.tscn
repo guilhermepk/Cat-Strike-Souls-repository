@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/TileMaps/ObjectsTiles.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/light.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/Entities/ArcaneSymbolLight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Sprites/Pixel Art Top Down - Basic/Texture/TX Props.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Entities/Column.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sounds/SoundEffects/ShapeFormsLibrary/Arcane Activations Preview/Activate Plinth 03.wav" type="AudioStream" id=5]
@@ -248,68 +248,42 @@ visible = false
 position = Vector2( 17, -48 )
 frames = SubResource( 2 )
 
-[node name="Light2D" type="Light2D" parent="TileMap/LightEffects/Pi"]
-position = Vector2( 0, 1 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-color = Color( 0.32549, 0.807843, 0.905882, 1 )
-energy = 0.6
+[node name="Light2D" parent="TileMap/LightEffects/Pi" instance=ExtResource( 2 )]
 
 [node name="N" type="AnimatedSprite" parent="TileMap/LightEffects"]
 visible = false
 position = Vector2( 17, -40 )
 frames = SubResource( 4 )
 
-[node name="Light2D" type="Light2D" parent="TileMap/LightEffects/N"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-color = Color( 0.32549, 0.807843, 0.905882, 1 )
-energy = 0.6
+[node name="Light2D" parent="TileMap/LightEffects/N" instance=ExtResource( 2 )]
 
 [node name="2" type="AnimatedSprite" parent="TileMap/LightEffects"]
 visible = false
 position = Vector2( 17, -33 )
 frames = SubResource( 6 )
 
-[node name="Light2D" type="Light2D" parent="TileMap/LightEffects/2"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-color = Color( 0.32549, 0.807843, 0.905882, 1 )
-energy = 0.6
+[node name="Light2D" parent="TileMap/LightEffects/2" instance=ExtResource( 2 )]
 
 [node name="R" type="AnimatedSprite" parent="TileMap/LightEffects"]
 visible = false
 position = Vector2( 17, -26 )
 frames = SubResource( 8 )
 
-[node name="Light2D" type="Light2D" parent="TileMap/LightEffects/R"]
-position = Vector2( 0, 1 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-color = Color( 0.32549, 0.807843, 0.905882, 1 )
-energy = 0.6
+[node name="Light2D" parent="TileMap/LightEffects/R" instance=ExtResource( 2 )]
 
 [node name="O" type="AnimatedSprite" parent="TileMap/LightEffects"]
 visible = false
 position = Vector2( 17, -18 )
 frames = SubResource( 10 )
 
-[node name="Light2D" type="Light2D" parent="TileMap/LightEffects/O"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-color = Color( 0.32549, 0.807843, 0.905882, 1 )
-energy = 0.6
+[node name="Light2D" parent="TileMap/LightEffects/O" instance=ExtResource( 2 )]
 
 [node name="K" type="AnimatedSprite" parent="TileMap/LightEffects"]
 visible = false
 position = Vector2( 17, -11 )
 frames = SubResource( 12 )
 
-[node name="Light2D" type="Light2D" parent="TileMap/LightEffects/K"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-color = Color( 0.32549, 0.807843, 0.905882, 1 )
-energy = 0.6
+[node name="Light2D" parent="TileMap/LightEffects/K" instance=ExtResource( 2 )]
 
 [node name="Area2D" type="Area2D" parent="."]
 
