@@ -168,7 +168,6 @@ func followPlayer(player):
 		motion.y -= spd
 	else:
 		motion.y = 0
-		#motion.y += rng.randi_range()
 	
 	var xInside
 	var yInside

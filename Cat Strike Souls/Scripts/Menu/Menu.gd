@@ -19,11 +19,14 @@ func on_button_pressed(button: Button):
 			get_tree().change_scene("res://Scenes/InitialCutscene.tscn")
 		"Controls":
 			get_tree().change_scene("res://Scenes/Menu/Controls.tscn")
+		"Options":
+			get_tree().change_scene("res://Scenes/Menu/Options.tscn")
 		"Quit":
 			get_tree().quit()
-		
 		"Developer":
 			OS.shell_open("https://github.com/guilhermepk")
+		"Repository":
+			OS.shell_open('https://github.com/guilhermepk/Cat-Strike-Souls-repository')
 
 func mouse_interaction(button: Button, state: String):
 	match state:

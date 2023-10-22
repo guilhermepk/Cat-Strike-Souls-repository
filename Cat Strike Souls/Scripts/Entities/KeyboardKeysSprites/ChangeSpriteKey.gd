@@ -16,6 +16,8 @@ func _ready():
 			key = KEY_LEFT
 		'RightKey':
 			key = KEY_RIGHT
+		'EscKey':
+			key = KEY_ESCAPE
 
 func _input(event):
 	if event is InputEventKey:

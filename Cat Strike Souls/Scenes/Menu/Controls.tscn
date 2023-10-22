@@ -1,10 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Fonts/mago1.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Entities/KeyboardKeysScenes/ArrowKeys.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Entities/KeyboardKeysScenes/XKey.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Entities/KeyboardKeysScenes/EscKey.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Fonts/Pixel Tactical.otf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 80
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -28,26 +36,58 @@ margin_top = 9.0
 margin_right = 1271.0
 margin_bottom = 66.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -87.0
-margin_top = 70.0
-margin_right = 65.0
-margin_bottom = 136.0
-alignment = 1
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
-margin_right = 192.0
-margin_bottom = 51.0
+[node name="Controles" type="Label" parent="ColorRect"]
+margin_left = 387.0
+margin_top = 48.0
+margin_right = 955.0
+margin_bottom = 128.0
 custom_fonts/font = SubResource( 1 )
 text = "Controles"
 align = 1
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer"]
-margin_top = 55.0
-margin_right = 192.0
-margin_bottom = 81.0
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -117.0
+margin_top = 62.0
+margin_right = 123.0
+margin_bottom = 128.0
+alignment = 1
+
+[node name="EscKey" parent="ColorRect/VBoxContainer" instance=ExtResource( 5 )]
+position = Vector2( -3, 408 )
+scale = Vector2( 3.75, 3.75 )
+
+[node name="Menu de pause (em jogo)" type="Label" parent="ColorRect/VBoxContainer/EscKey"]
+margin_left = 40.5333
+margin_top = -5.06668
+margin_right = 296.533
+margin_bottom = 20.9333
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = SubResource( 3 )
+text = "Menu de pause (em jogo)"
+
+[node name="XKey" parent="ColorRect/VBoxContainer" instance=ExtResource( 4 )]
+position = Vector2( -4, 286 )
+scale = Vector2( 3.75, 3.75 )
+
+[node name="Acender runas" type="Label" parent="ColorRect/VBoxContainer/XKey"]
+margin_left = 41.3333
+margin_top = -5.60001
+margin_right = 191.333
+margin_bottom = 20.4
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = SubResource( 3 )
+text = "Acender runas"
+
+[node name="ArrowKeys" parent="ColorRect/VBoxContainer" instance=ExtResource( 3 )]
+position = Vector2( -2, 165 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Andar" type="Label" parent="ColorRect/VBoxContainer/ArrowKeys"]
+margin_left = 38.0
+margin_top = -26.0
+margin_right = 230.0
 custom_fonts/font = SubResource( 2 )
-text = "Setas - Andar"
+text = "Andar"
 align = 1
